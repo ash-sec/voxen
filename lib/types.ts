@@ -27,6 +27,17 @@ export interface OnboardingAnswers {
   slang: string;
 }
 
+export interface PendingSignup {
+  token: string;
+  name: string;
+  email: string;
+  profession: string;
+  verifiedAt: number;
+  questionnaire?: OnboardingAnswers;
+  questionnaireCompletedAt?: number;
+  abandonedEmailSent?: boolean;
+}
+
 export interface MagicLinkSession {
   email: string;
   subscriberId: string;

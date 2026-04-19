@@ -1,8 +1,6 @@
 import { NextRequest } from "next/server";
-import { getOTP, deleteOTP } from "@/lib/kv";
-import { stripe } from "@/lib/stripe";
-
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://voxen.co";
+import { getOTP, deleteOTP, savePendingSignup } from "@/lib/kv";
+import { generateToken } from "@/lib/utils";
 
 export async function POST(req: NextRequest) {
   try {
@@ -30,38 +28,19 @@ export async function POST(req: NextRequest) {
       return Response.json({ error: "Incorrect code. Please try again." }, { status: 400 });
     }
 
-    // Mark as verified
-    record.verified = true;
     await deleteOTP(email);
 
-    // Create Stripe Checkout session
-    const session = await stripe.checkout.sessions.create({
-      mode: "subscription",
-      payment_method_types: ["card"],
-      customer_email: email.toLowerCase(),
-      line_items: [
-        {
-          price: process.env.STRIPE_PRICE_ID!,
-          quantity: 1,
-        },
-      ],
-      success_url: `${BASE_URL}/onboarding?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${BASE_URL}/signup?cancelled=true`,
-      metadata: {
-        name: record.name,
-        email: email.toLowerCase(),
-        profession: record.profession,
-      },
-      subscription_data: {
-        metadata: {
-          name: record.name,
-          email: email.toLowerCase(),
-          profession: record.profession,
-        },
-      },
+    // Create a pending signup record — questionnaire + payment come next
+    const signupToken = generateToken();
+    await savePendingSignup({
+      token: signupToken,
+      name: record.name,
+      email: email.toLowerCase(),
+      profession: record.profession,
+      verifiedAt: Date.now(),
     });
 
-    return Response.json({ checkoutUrl: session.url });
+    return Response.json({ signupToken });
   } catch (err) {
     console.error("verify-otp error:", err);
     return Response.json({ error: "Internal server error." }, { status: 500 });

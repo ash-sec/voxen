@@ -1,5 +1,5 @@
 import { Redis } from "@upstash/redis";
-import type { Subscriber, OTPRecord, MagicLinkSession } from "./types";
+import type { Subscriber, OTPRecord, MagicLinkSession, PendingSignup } from "./types";
 
 // Initialise Redis client
 export const redis = new Redis({
@@ -94,4 +94,37 @@ export async function getAuthSession(sessionToken: string): Promise<string | nul
 
 export async function deleteAuthSession(sessionToken: string): Promise<void> {
   await redis.del(`auth:${sessionToken}`);
+}
+
+// ── Pending Signups (pre-payment) ────────────────────────────────────────────
+
+const PENDING_TTL = 7 * 24 * 60 * 60; // 7 days in seconds
+
+export async function savePendingSignup(record: PendingSignup): Promise<void> {
+  await redis.set(`pending:${record.token}`, record, { ex: PENDING_TTL });
+}
+
+export async function getPendingSignup(token: string): Promise<PendingSignup | null> {
+  return redis.get<PendingSignup>(`pending:${token}`);
+}
+
+export async function deletePendingSignup(token: string): Promise<void> {
+  await redis.del(`pending:${token}`);
+  await redis.zrem("pending:all", token);
+}
+
+/** Add token to the sorted set used by the abandoned-flow cron. Score = questionnaire completion timestamp. */
+export async function indexPendingSignup(token: string, score: number): Promise<void> {
+  await redis.zadd("pending:all", { score, member: token });
+}
+
+/** Get tokens whose questionnaire was completed between (now - maxAgeMs) and (now - minAgeMs) */
+export async function getAbandonedPendingTokens(
+  minAgeMs: number,
+  maxAgeMs: number
+): Promise<string[]> {
+  const now = Date.now();
+  const min = now - maxAgeMs;
+  const max = now - minAgeMs;
+  return redis.zrange("pending:all", min, max, { byScore: true }) as Promise<string[]>;
 }

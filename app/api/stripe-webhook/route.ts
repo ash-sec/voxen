@@ -1,22 +1,28 @@
 import { NextRequest } from "next/server";
 import { stripe } from "@/lib/stripe";
-import { saveSubscriber, getSubscriberByEmail, updateSubscriber, removeFromActiveSet } from "@/lib/kv";
+import {
+  saveSubscriber,
+  getSubscriberByEmail,
+  updateSubscriber,
+  removeFromActiveSet,
+  getPendingSignup,
+  deletePendingSignup,
+} from "@/lib/kv";
 import { resend, FROM_EMAIL } from "@/lib/resend";
 import { WelcomeEmailTemplate } from "@/lib/emails/welcome";
 import { CancellationEmailTemplate } from "@/lib/emails/cancellation";
 import { generateId, randomSendTime } from "@/lib/utils";
 import Stripe from "stripe";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://voxen.co";
+
 /** billing_cycle_anchor is the closest we have to "next billing date" in the new Stripe API */
 function getBillingDate(subscription: Stripe.Subscription): string {
-  // billing_cycle_anchor is a Unix timestamp for the anchor date
-  // For the next billing date, use billing_cycle_anchor if in the future, else add 1 month
   const anchor = subscription.billing_cycle_anchor * 1000;
   const now = Date.now();
   if (anchor > now) {
     return new Date(anchor).toISOString();
   }
-  // Fallback: add 30 days to now
   return new Date(now + 30 * 24 * 60 * 60 * 1000).toISOString();
 }
 
@@ -43,17 +49,29 @@ export async function POST(req: NextRequest) {
         const session = event.data.object as Stripe.Checkout.Session;
         if (session.mode !== "subscription") break;
 
-        const { name, email, profession } = session.metadata ?? {};
+        const { name, email, profession, pendingToken } = session.metadata ?? {};
         if (!name || !email || !profession) break;
 
         const subscriptionId = session.subscription as string;
         const customerId = session.customer as string;
 
-        // Retrieve subscription to get billing anchor date
         const subscription = await stripe.subscriptions.retrieve(subscriptionId);
         const nextBilling = getBillingDate(subscription);
-
         const { sendHour, sendMinute } = randomSendTime();
+
+        // Load questionnaire answers from the pending signup record if available
+        let questionnaire = undefined;
+        let onboardingCompleted = false;
+
+        if (pendingToken) {
+          const pending = await getPendingSignup(pendingToken);
+          if (pending?.questionnaire) {
+            questionnaire = pending.questionnaire;
+            onboardingCompleted = true;
+          }
+          // Clean up pending record
+          await deletePendingSignup(pendingToken);
+        }
 
         const subscriber = {
           id: generateId(),
@@ -65,7 +83,8 @@ export async function POST(req: NextRequest) {
           stripeCustomerId: customerId,
           status: "active" as const,
           signupDate: new Date().toISOString(),
-          onboardingCompleted: false,
+          onboardingCompleted,
+          onboarding: questionnaire,
           nextBillingDate: nextBilling,
           sendHour,
           sendMinute,
@@ -73,14 +92,17 @@ export async function POST(req: NextRequest) {
 
         await saveSubscriber(subscriber);
 
-        // Send welcome email
+        // Welcome email — onboarding is already done, so no onboarding CTA
         await resend.emails.send({
           from: FROM_EMAIL,
           to: email.toLowerCase(),
-          subject: "Welcome to Voxen 👋 Let's get started",
+          subject: "Welcome to Voxen 👋 You're all set!",
           html: WelcomeEmailTemplate({
             name,
-            onboardingUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/onboarding?session_id=${session.id}`,
+            onboardingUrl: onboardingCompleted
+              ? `${BASE_URL}/account`
+              : `${BASE_URL}/onboarding`,
+            onboardingDone: onboardingCompleted,
           }),
         });
 
@@ -98,7 +120,6 @@ export async function POST(req: NextRequest) {
         await updateSubscriber(sub.id, { status: "cancelled" });
         await removeFromActiveSet(sub.id);
 
-        // Cancellation email
         await resend.emails.send({
           from: FROM_EMAIL,
           to: email,
