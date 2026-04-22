@@ -2,7 +2,8 @@ import { Resend } from "resend";
 
 export const resend = new Resend(process.env.RESEND_API_KEY!);
 
-export const FROM_EMAIL = "Voxen <voxensupport.au@gmail.com>";
+export const FROM_EMAIL = "Voxen <hello@voxen.co>";
+export const REPLY_TO = "voxensupport.au@gmail.com";
 export const SUPPORT_EMAIL = "voxensupport.au@gmail.com";
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://voxen.co";
 

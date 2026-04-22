@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { getPendingSignup, savePendingSignup, indexPendingSignup } from "@/lib/kv";
 import { stripe } from "@/lib/stripe";
-import { resend, FROM_EMAIL } from "@/lib/resend";
+import { resend, FROM_EMAIL, REPLY_TO } from "@/lib/resend";
 import { OnboardingSummaryEmailTemplate } from "@/lib/emails/onboarding-summary";
 import type { OnboardingAnswers } from "@/lib/types";
 
@@ -69,6 +69,7 @@ export async function POST(req: NextRequest) {
     // Send "Your Voxen profile is ready" email (fire-and-forget — don't block checkout)
     resend.emails.send({
       from: FROM_EMAIL,
+      replyTo: REPLY_TO,
       to: pending.email,
       subject: "Your Voxen profile is ready ✅",
       html: OnboardingSummaryEmailTemplate({

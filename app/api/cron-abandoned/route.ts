@@ -6,7 +6,7 @@ import {
   getSubscriberByEmail,
 } from "@/lib/kv";
 import { stripe } from "@/lib/stripe";
-import { resend, FROM_EMAIL } from "@/lib/resend";
+import { resend, FROM_EMAIL, REPLY_TO } from "@/lib/resend";
 import { AbandonedSignupEmailTemplate } from "@/lib/emails/abandoned-signup";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://voxen.co";
@@ -70,6 +70,7 @@ export async function GET(req: NextRequest) {
 
       await resend.emails.send({
         from: FROM_EMAIL,
+        replyTo: REPLY_TO,
         to: pending.email,
         subject: "Hey, you never finished setting up your Voxen account 👋",
         html: AbandonedSignupEmailTemplate({

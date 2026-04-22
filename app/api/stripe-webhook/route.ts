@@ -8,7 +8,7 @@ import {
   getPendingSignup,
   deletePendingSignup,
 } from "@/lib/kv";
-import { resend, FROM_EMAIL } from "@/lib/resend";
+import { resend, FROM_EMAIL, REPLY_TO } from "@/lib/resend";
 import { WelcomeEmailTemplate } from "@/lib/emails/welcome";
 import { CancellationEmailTemplate } from "@/lib/emails/cancellation";
 import { generateId, randomSendTime } from "@/lib/utils";
@@ -95,6 +95,7 @@ export async function POST(req: NextRequest) {
         // Welcome email — onboarding is already done, so no onboarding CTA
         await resend.emails.send({
           from: FROM_EMAIL,
+          replyTo: REPLY_TO,
           to: email.toLowerCase(),
           subject: "Welcome to Voxen 👋 You're all set!",
           html: WelcomeEmailTemplate({
@@ -122,6 +123,7 @@ export async function POST(req: NextRequest) {
 
         await resend.emails.send({
           from: FROM_EMAIL,
+          replyTo: REPLY_TO,
           to: email,
           subject: "Your Voxen subscription has been cancelled",
           html: CancellationEmailTemplate({ name: sub.name }),

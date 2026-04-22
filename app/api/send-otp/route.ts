@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { saveOTP } from "@/lib/kv";
-import { resend, FROM_EMAIL } from "@/lib/resend";
+import { resend, FROM_EMAIL, REPLY_TO } from "@/lib/resend";
 import { generateOTP } from "@/lib/utils";
 import { OTPEmailTemplate } from "@/lib/emails/otp";
 
@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await resend.emails.send({
       from: FROM_EMAIL,
+      replyTo: REPLY_TO,
       to: emailLower,
       subject: `${code} — Your Voxen verification code`,
       html: OTPEmailTemplate({ name: name.trim(), code }),

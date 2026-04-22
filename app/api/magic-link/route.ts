@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { getSubscriberByEmail, saveMagicSession } from "@/lib/kv";
-import { resend, FROM_EMAIL } from "@/lib/resend";
+import { resend, FROM_EMAIL, REPLY_TO } from "@/lib/resend";
 import { MagicLinkEmailTemplate } from "@/lib/emails/magic-link";
 import { generateToken } from "@/lib/utils";
 
@@ -33,6 +33,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: FROM_EMAIL,
+      replyTo: REPLY_TO,
       to: email.toLowerCase(),
       subject: "Your Voxen login link 🔑",
       html: MagicLinkEmailTemplate({ name: subscriber.name, loginUrl }),

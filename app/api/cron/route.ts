@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { getAllActiveSubscriberIds, getSubscriber } from "@/lib/kv";
 import { generateLinkedInPost } from "@/lib/claude";
-import { resend, FROM_EMAIL, randomSubjectLine, randomOpener } from "@/lib/resend";
+import { resend, FROM_EMAIL, REPLY_TO, randomSubjectLine, randomOpener } from "@/lib/resend";
 import { PostDeliveryEmailTemplate } from "@/lib/emails/post-delivery";
 import { getCurrentDayName, getAESTHour } from "@/lib/utils";
 
@@ -64,6 +64,7 @@ export async function GET(req: NextRequest) {
 
       await resend.emails.send({
         from: FROM_EMAIL,
+        replyTo: REPLY_TO,
         to: subscriber.email,
         subject,
         html: PostDeliveryEmailTemplate({
