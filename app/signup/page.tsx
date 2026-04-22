@@ -16,6 +16,7 @@ export default function SignupPage() {
   const [name, setName]           = useState("");
   const [email, setEmail]         = useState("");
   const [profession, setProfession] = useState("");
+  const [otherProfession, setOtherProfession] = useState("");
   const [detailsLoading, setDetailsLoading] = useState(false);
   const [detailsError, setDetailsError]     = useState("");
 
@@ -29,8 +30,13 @@ export default function SignupPage() {
   async function handleDetailsSubmit(e: React.FormEvent) {
     e.preventDefault();
     setDetailsError("");
+    const effectiveProfession = profession === "Other" ? otherProfession.trim() : profession;
     if (!name.trim() || !email.trim() || !profession) {
       setDetailsError("Please fill in all fields.");
+      return;
+    }
+    if (profession === "Other" && !otherProfession.trim()) {
+      setDetailsError("Please tell us your profession.");
       return;
     }
     setDetailsLoading(true);
@@ -38,7 +44,7 @@ export default function SignupPage() {
       const res = await fetch("/api/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), email: email.trim(), profession }),
+        body: JSON.stringify({ name: name.trim(), email: email.trim(), profession: effectiveProfession }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Failed to send verification code.");
@@ -68,10 +74,11 @@ export default function SignupPage() {
       if (!res.ok) throw new Error(data.error ?? "Invalid code.");
 
       // New flow: store token + basic info in localStorage, then go to questionnaire
+      const effectiveProfession = profession === "Other" ? otherProfession.trim() : profession;
       localStorage.setItem("voxen_signup_token", data.signupToken);
       localStorage.setItem(
         "voxen_signup_meta",
-        JSON.stringify({ name: name.trim(), email: email.trim(), profession })
+        JSON.stringify({ name: name.trim(), email: email.trim(), profession: effectiveProfession })
       );
 
       router.push("/onboarding?mode=signup");
@@ -171,7 +178,7 @@ export default function SignupPage() {
                 <label className="block text-sm font-medium text-slate-300 mb-1.5">Profession</label>
                 <select
                   value={profession}
-                  onChange={(e) => setProfession(e.target.value)}
+                  onChange={(e) => { setProfession(e.target.value); setOtherProfession(""); }}
                   className="input-field text-base appearance-none"
                   style={{ backgroundImage: "none" }}
                 >
@@ -180,6 +187,16 @@ export default function SignupPage() {
                     <option key={p} value={p}>{p}</option>
                   ))}
                 </select>
+                {profession === "Other" && (
+                  <input
+                    type="text"
+                    value={otherProfession}
+                    onChange={(e) => setOtherProfession(e.target.value)}
+                    placeholder="What's your profession? e.g. Physiotherapist, Real Estate Agent..."
+                    className="input-field text-base mt-2"
+                    autoFocus
+                  />
+                )}
               </div>
 
               {detailsError && (

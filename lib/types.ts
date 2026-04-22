@@ -56,10 +56,12 @@ export interface OTPRecord {
 export const PROFESSIONS = [
   "Registered Nurse",
   "Pharmacist",
+  "Doctor / GP",
+  "Allied Health Professional",
   "Tradie / Electrician",
   "Tradie / Plumber",
   "Tradie / Builder",
-  "Other Healthcare Worker",
+  "Small Business Owner",
   "Other",
 ] as const;
 
