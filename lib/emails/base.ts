@@ -30,7 +30,7 @@ export function emailWrapper(content: string): string {
 <body>
   <div class="wrapper">
     <div class="card">
-      <a href="${BASE_URL}" class="logo">Voxen<span>.</span></a>
+      <a href="${BASE_URL}" class="logo"><img src="https://voxen.co/logo.png" alt="Voxen" height="32" style="height:32px;width:auto;" /></a>
       ${content}
     </div>
     <div class="footer">
