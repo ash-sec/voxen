@@ -63,7 +63,7 @@ Make it feel like something a real Australian ${profession} would actually post.
 Output ONLY the LinkedIn post text — no preamble, no "Here is the post:", no quotation marks around the whole thing.`;
 
   const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-20250514",
+    model: "claude-sonnet-4-6",
     max_tokens: 600,
     messages: [{ role: "user", content: userPrompt }],
     system: systemPrompt,
