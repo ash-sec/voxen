@@ -10,22 +10,10 @@ const cards = [
           d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    title: "Nurses & Healthcare Workers",
-    tagline: "You save lives. We handle your LinkedIn.",
-    description:
-      "You're on your feet all day. The last thing you need is staring at a blank screen trying to write something professional. We've got it.",
-  },
-  {
-    icon: (
-      <svg className="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-      </svg>
-    ),
-    title: "Pharmacists",
+    title: "Healthcare Professionals",
     tagline: "Your expertise deserves an audience.",
     description:
-      "You know more about medications than most doctors. Share that knowledge and build a professional brand — without writing a word yourself.",
+      "Doctors, nurses, allied health workers. You have knowledge and experience that others genuinely need to hear. LinkedIn is where your professional reputation gets built.",
   },
   {
     icon: (
@@ -37,7 +25,19 @@ const cards = [
     title: "Tradies & Tradespeople",
     tagline: "You build Australia. Let's build your brand.",
     description:
-      "Electricians, plumbers, builders — the best in the trade are winning work on LinkedIn. Your profile should show why you're the best in the business.",
+      "Electricians, plumbers, builders. The best in the trade are winning work on LinkedIn. Your profile should show why you are the best in the business.",
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+      </svg>
+    ),
+    title: "Small Business Owners",
+    tagline: "Your story is your strongest marketing tool.",
+    description:
+      "You started something from scratch. That journey, those lessons, that expertise. LinkedIn turns your experience into leads, trust and opportunities.",
   },
 ];
 

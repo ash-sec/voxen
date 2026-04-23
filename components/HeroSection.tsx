@@ -60,7 +60,7 @@ export default function HeroSection() {
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
           3 done-for-you posts delivered to your inbox every{" "}
           <span className="text-white font-medium">Monday, Wednesday & Friday</span>.
-          Built for Australian healthcare workers and tradies who have better things to do.
+          Built for busy Australian professionals who have better things to do.
         </p>
 
         {/* CTA Buttons */}
@@ -121,17 +121,22 @@ export default function HeroSection() {
                 <p className="text-slate-400 text-xs">Morning! Your post's ready to go 👇</p>
                 <div className="bg-[#0a1525] border border-blue-500/20 rounded-lg p-4 mt-2">
                   <p className="text-slate-200 text-sm leading-relaxed">
-                    Three years ago I nearly walked out of a double shift and didn't come back.
+                    You know you should be posting on LinkedIn.
                   </p>
                   <p className="text-slate-200 text-sm leading-relaxed mt-2">
-                    I was burnt out, under-appreciated, and wondering why I'd bothered doing the degree.
+                    Everyone says it. You've thought about it yourself a dozen times.
                   </p>
                   <p className="text-slate-200 text-sm leading-relaxed mt-2">
-                    What changed wasn't the hospital. It wasn't the roster.
-                    It was finding other nurses online who felt exactly the same — and realising I wasn't alone.
+                    But then work runs long. Life gets in the way. You sit down to write something and nothing comes out. So you close the tab and tell yourself you'll do it tomorrow.
+                  </p>
+                  <p className="text-slate-200 text-sm leading-relaxed mt-2">
+                    Tomorrow never comes.
+                  </p>
+                  <p className="text-slate-200 text-sm leading-relaxed mt-2">
+                    That's not a you problem. That's just reality for anyone with an actual job and an actual life.
                   </p>
                   <p className="text-blue-400 text-sm mt-2">
-                    Is there someone in your industry who made a difference when you were struggling?
+                    What would consistent LinkedIn presence do for your career if someone just handled it for you?
                   </p>
                 </div>
                 <p className="text-slate-400 text-xs mt-3">Just copy and paste this straight into LinkedIn.</p>

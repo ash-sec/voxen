@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import WhyLinkedIn from "@/components/WhyLinkedIn";
 import WhoItsFor from "@/components/WhoItsFor";
 import HowItWorks from "@/components/HowItWorks";
 import PricingSection from "@/components/PricingSection";
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
+        <WhyLinkedIn />
         <WhoItsFor />
         <HowItWorks />
         <PricingSection />
