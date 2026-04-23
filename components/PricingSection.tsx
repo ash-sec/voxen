@@ -94,7 +94,7 @@ export default function PricingSection() {
               </div>
             </div>
             <p className="text-slate-400 text-sm mb-8">
-              That's less than $3 per post — for content that actually gets engagement.
+              Most LinkedIn ghostwriters charge $250 for a single post. You're getting 12.
             </p>
 
             {/* Features */}
