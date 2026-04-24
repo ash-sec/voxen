@@ -10,6 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   icons: { icon: "/logo.png" },
+  verification: {
+    google: "gh66AX4HzzVgUZSjKQyWfWUylMtMkJEFhl_YflrDlgY",
+  },
   title: "Voxen — Your LinkedIn. Written For You.",
   description:
     "3 done-for-you LinkedIn posts delivered to your inbox every Monday, Wednesday & Friday. Built for Australian healthcare workers and tradies.",
