@@ -46,6 +46,12 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+          >
+            Blog
+          </Link>
         </div>
 
         {/* CTA */}
@@ -99,6 +105,13 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
+          <Link
+            href="/blog"
+            className="text-left text-sm font-medium text-slate-300 hover:text-white transition-colors py-1"
+            onClick={() => setMobileOpen(false)}
+          >
+            Blog
+          </Link>
           <button
             onClick={() => scrollTo("pricing")}
             className="btn-primary text-sm w-full mt-2"
