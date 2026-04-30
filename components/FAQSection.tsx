@@ -31,6 +31,26 @@ const faqs = [
     q: "What exactly is a LinkedIn ghostwriter?",
     a: "A LinkedIn ghostwriter writes content on your behalf, in your voice, so your profile stays active and professional without you having to write a single word. Voxen does this automatically, delivering 3 posts to your inbox every week based on your answers to a short questionnaire.",
   },
+  {
+    q: "Is LinkedIn ghostwriting ethical?",
+    a: "Yes. Ghostwriting has existed for centuries and is completely standard practice across business, politics, media and personal branding. CEOs use speechwriters. Authors use co-writers. Business owners use copywriters. Having someone write in your voice based on your real experiences, views and expertise is no different. The ideas are yours. The stories are yours. We just handle the writing.",
+  },
+  {
+    q: "How much does LinkedIn ghostwriting cost in Australia?",
+    a: "Voxen is $250 per month for 3 posts per week. That works out to around $20 per post. Freelance LinkedIn ghostwriters in Australia typically charge $150 to $500 per post, so a subscription like Voxen is significantly more cost-effective for anyone who wants consistent content without a big freelancer bill.",
+  },
+  {
+    q: "Will my followers know it's ghostwritten?",
+    a: "Almost certainly not. The posts are written based on your onboarding answers, your industry, your personality and your stories. They are designed to sound exactly like you. Ghostwriting is also far more common than most people realise, particularly among business owners and executives on LinkedIn.",
+  },
+  {
+    q: "What platforms do you write for?",
+    a: "Voxen is focused entirely on LinkedIn. We write specifically for the LinkedIn format, including the right length, structure and tone that performs well on that platform. We do not currently offer content for Instagram, Twitter or other platforms.",
+  },
+  {
+    q: "How do you write in my voice?",
+    a: "When you sign up, you complete a short onboarding questionnaire about your role, your industry, the topics you care about, your communication style and the kind of professional reputation you want to build. We use your answers to shape every post so it reflects how you actually think and speak. Over time the content gets more accurate as we build a clearer picture of you.",
+  },
 ];
 
 function AccordionItem({ q, a, isOpen, onToggle }: {
