@@ -13,7 +13,7 @@ const cards = [
     title: "Healthcare Professionals",
     tagline: "Your expertise deserves an audience.",
     description:
-      "Doctors, nurses, allied health workers. You have knowledge and experience that others genuinely need to hear. LinkedIn is where your professional reputation gets built.",
+      "Doctors, nurses, allied health workers. You have knowledge and experience that others genuinely need to hear. Our LinkedIn ghostwriting service gets that expertise in front of the right audience, consistently.",
   },
   {
     icon: (
@@ -25,7 +25,7 @@ const cards = [
     title: "Tradies & Tradespeople",
     tagline: "You build Australia. Let's build your brand.",
     description:
-      "Electricians, plumbers, builders. The best in the trade are winning work on LinkedIn. Your profile should show why you are the best in the business.",
+      "Electricians, plumbers, builders. The best in the trade are winning work on LinkedIn. Done-for-you LinkedIn content keeps your profile active while you stay focused on the job.",
   },
   {
     icon: (
@@ -37,7 +37,7 @@ const cards = [
     title: "Small Business Owners",
     tagline: "Your story is your strongest marketing tool.",
     description:
-      "You started something from scratch. That journey, those lessons, that expertise. LinkedIn turns your experience into leads, trust and opportunities.",
+      "You started something from scratch. That journey, those lessons, that expertise. Consistent LinkedIn ghostwriting turns that story into leads, trust and real opportunities.",
   },
 ];
 

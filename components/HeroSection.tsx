@@ -45,7 +45,7 @@ export default function HeroSection() {
             <svg className="w-3 h-3 mr-1.5 text-blue-400" fill="currentColor" viewBox="0 0 8 8">
               <circle cx="4" cy="4" r="3" />
             </svg>
-            Australian-made for Australian professionals
+            Done-for-you LinkedIn ghostwriting
           </div>
         </div>
 
@@ -58,9 +58,7 @@ export default function HeroSection() {
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-          3 done-for-you posts delivered to your inbox every{" "}
-          <span className="text-white font-medium">Monday, Wednesday & Friday</span>.
-          Built for busy Australian professionals who have better things to do.
+          A done-for-you LinkedIn ghostwriting service that handles your content every week. 3 posts written in your voice, delivered straight to your inbox.
         </p>
 
         {/* CTA Buttons */}

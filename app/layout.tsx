@@ -13,20 +13,25 @@ export const metadata: Metadata = {
   verification: {
     google: "gh66AX4HzzVgUZSjKQyWfWUylMtMkJEFhl_YflrDlgY",
   },
-  title: "Voxen — Your LinkedIn. Written For You.",
+  title: "Voxen — LinkedIn Ghostwriting Service for Australian Professionals",
   description:
-    "3 done-for-you LinkedIn posts delivered to your inbox every Monday, Wednesday & Friday. Built for Australian healthcare workers and tradies.",
+    "Voxen is a done-for-you LinkedIn ghostwriting service. We write 3 posts a week in your voice and deliver them to your inbox every Monday, Wednesday and Friday.",
   keywords: [
     "LinkedIn ghostwriting",
+    "LinkedIn ghostwriter",
+    "LinkedIn ghostwriting service",
+    "LinkedIn ghostwriter Australia",
+    "done for you LinkedIn content",
+    "LinkedIn content writing service",
     "LinkedIn posts Australia",
     "healthcare LinkedIn",
     "tradie LinkedIn",
     "done for you content",
   ],
   openGraph: {
-    title: "Voxen — Your LinkedIn. Written For You.",
+    title: "Voxen — LinkedIn Ghostwriting Service for Australian Professionals",
     description:
-      "3 done-for-you LinkedIn posts every week. Built for Australian healthcare workers and tradies.",
+      "Voxen is a done-for-you LinkedIn ghostwriting service. We write 3 posts a week in your voice and deliver them to your inbox every Monday, Wednesday and Friday.",
     type: "website",
   },
 };

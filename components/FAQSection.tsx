@@ -27,6 +27,10 @@ const faqs = [
     q: "How do I contact support?",
     a: "Email us anytime at voxensupport.au@gmail.com and we'll get back to you within 24 hours. You can also use the contact form inside your account dashboard.",
   },
+  {
+    q: "What exactly is a LinkedIn ghostwriter?",
+    a: "A LinkedIn ghostwriter writes content on your behalf, in your voice, so your profile stays active and professional without you having to write a single word. Voxen does this automatically, delivering 3 posts to your inbox every week based on your answers to a short questionnaire.",
+  },
 ];
 
 function AccordionItem({ q, a, isOpen, onToggle }: {

@@ -21,7 +21,7 @@ const steps = [
     title: "We write 3 posts per week in your voice",
     time: "Done for you",
     description:
-      "Every post is tailored to your profession, your personality, and the topics you care about. Written to sound like you — not a robot.",
+      "Every post is ghostwritten to match your profession, your personality, and the topics you care about. It sounds like you wrote it — not a robot.",
     icon: (
       <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
