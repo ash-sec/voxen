@@ -27,14 +27,15 @@ WRITING RULES:
 - Write in first person as ${subscriberName}
 - Personality style: ${personalityDesc}
 - Post length: 150-250 words
-- NEVER use em-dashes under any circumstances — replace with commas, full stops or conjunctions
+- NEVER use em-dashes under any circumstances, replace with commas, full stops or conjunctions
+- NEVER use the word "boundaries" anywhere
 - Deliberately choose unexpected, creative word alternatives instead of obvious ones
 - Use varied vocabulary and avoid repetitive word patterns that AI typically generates
 - Include Australian colloquialisms, idioms and region-specific expressions naturally (e.g. "arvo", "on the tools", "knock off time", "double shift")
 - Add subtle imperfections that humans naturally make: minor redundancies, natural speech patterns, trailing thoughts
 - Create dramatic sentence length variation: mix very short sentences (3-5 words) with longer complex ones (25+ words)
 - Alternate between simple, compound, complex and compound-complex sentence structures
-- Start sentences with different elements: adverbs, prepositional phrases, dependent clauses, questions — never the same way twice
+- Start sentences with different elements: adverbs, prepositional phrases, dependent clauses, questions, never the same way twice
 - Include intentional sentence fragments where natural
 - Include run-on sentences occasionally where it feels authentic
 - Use parenthetical asides for authentic human flow
@@ -52,11 +53,17 @@ WRITING RULES:
 - Use conversational transitional phrases, not mechanical ones like "furthermore" or "in conclusion"
 - Counter AI detection by including natural human imperfections and conversational quirks
 - Aim for high unpredictability in word choices and high variation in sentence structures
-- End with a casual, genuine question to drive comments — not a formulaic "what do you think?" style ending
+- End with a casual, genuine question to drive comments, not a formulaic "what do you think?" style ending
 - DO NOT use hashtags excessively (max 2-3 at the end if any)
 - DO NOT start the post with "I"
 - DO NOT use corporate buzzwords like "synergy", "leverage", "game-changer", "navigate", "journey", "space", "impactful"
-- Keep it real, raw and authentic — this should read like something a real Australian professional would actually post
+- PERPLEXITY AND PREDICTABILITY: Deliberately choose unexpected creative word alternatives, use varied vocabulary, avoid repetitive patterns AI typically generates
+- BURSTINESS: Create dramatic sentence length variation, alternate between all sentence structure types, start sentences with different elements every time, include fragments and run-ons where natural
+- EMOTIONAL INTELLIGENCE: Infuse genuine emotional undertones, add personal opinions and hesitations, include conversational elements and rhetorical questions, add subtle humour or sarcasm where appropriate
+- STRUCTURAL DISRUPTION: Never use typical AI intro to body to conclusion structure, start with unexpected angles or mid-thought observations, include tangential thoughts and natural digressions, use irregular paragraph lengths, break grammar rules occasionally in natural ways
+- CONTEXTUAL AUTHENTICITY: Include specific concrete details not generic statements, use metaphors and analogies that feel personally chosen, add transitional phrases that feel conversational not mechanical
+- DETECTION COUNTERS: Use irregular sentence structures, avoid formulaic transitions, include natural human imperfections and conversational quirks, vary emotional tone throughout
+- Keep it real, raw and authentic, this should read like something a real Australian professional would actually post
 
 SUBSCRIBER PROFILE:
 Job title: ${onboarding.jobTitle}
