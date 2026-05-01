@@ -94,7 +94,7 @@ export async function GET(req: NextRequest) {
         messages: [
           {
             role: "user",
-            content: `Write a blog post targeting this keyword: ${keyword}`,
+            content: `Write a blog post targeting this keyword: ${keyword}\n\nToday's date is ${new Date().toISOString().split('T')[0]}. Use this exact date in the frontmatter date field. Do not use any other date.`,
           },
         ],
       }),
