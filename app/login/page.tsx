@@ -33,7 +33,7 @@ export default function LoginPage() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden"
-      style={{ background: "#0A0F1E" }}
+      style={{ background: "#0f172a" }}
     >
       <div className="orb w-96 h-96 top-0 right-0 pointer-events-none" style={{ background: "rgba(59,130,246,0.07)" }} />
 

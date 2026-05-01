@@ -26,37 +26,64 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section id="cta" className="py-24 px-6 relative overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 40% at 50% 50%, rgba(59,130,246,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(59,130,246,0.08) 0%, transparent 70%)",
         }}
       />
 
       <div ref={sectionRef} className="section-hidden max-w-3xl mx-auto text-center">
-        <div className="badge inline-flex mb-6">Early Access</div>
+        <div className="badge inline-flex mb-6">Get Started</div>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-          Be one of our{" "}
-          <span className="gradient-text">first members.</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-2">
+          Stop putting it off.
+        </h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-blue-400 leading-tight mb-8">
+          Start showing up.
         </h2>
 
         <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-          Voxen is just getting started. A small group of Australian professionals are already
-          getting posts delivered every week. Spots are limited while we are in early access.
+          Every week you don&apos;t post is a week your competitors are. Voxen handles it all. You just copy and paste.
         </p>
+
+        {/* Trust signals */}
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10">
+          <span className="flex items-center gap-2 text-sm text-slate-300">
+            <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+            3 posts delivered every week
+          </span>
+          <span className="flex items-center gap-2 text-sm text-slate-300">
+            <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+            Cancel anytime, no lock-in
+          </span>
+          <span className="flex items-center gap-2 text-sm text-slate-300">
+            <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+            Setup takes 2 minutes
+          </span>
+        </div>
 
         <Link
           href="/signup"
-          className="btn-primary inline-flex items-center gap-2 text-base px-8 py-4"
+          className="btn-primary inline-flex items-center gap-2 text-base px-8 py-4 mb-5"
         >
-          Get Started
+          Get Started / $250/month
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </Link>
+
+        <p className="text-slate-500 text-sm">
+          No lock-in contract. Cancel anytime from your account.
+        </p>
       </div>
     </section>
   );

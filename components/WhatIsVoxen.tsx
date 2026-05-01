@@ -91,16 +91,23 @@ export default function WhatIsVoxen() {
         </div>
 
         {/* Body */}
-        <p className="text-slate-300 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-14">
-          Voxen is an Australian LinkedIn ghostwriting service. You sign up, fill in a short
-          questionnaire about your work, personality and goals, and we handle everything from there.
-          Every Monday, Wednesday and Friday, a ready-to-post LinkedIn post lands in your inbox
-          between 7am and 10am AEST. All you do is copy and paste it into LinkedIn. No writing,
-          no stressing, no staring at a blank screen. The posts are written to sound like you. Your
-          industry, your tone, your stories. Clients include business owners, real estate agents,
-          mortgage brokers, tradies, financial advisers and professionals across Australia who want
-          to stay visible on LinkedIn without it taking up their time.
-        </p>
+        <div className="space-y-4 text-slate-300 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-14">
+          <p>
+            Voxen is an Australian LinkedIn ghostwriting service. You sign up, fill in a short
+            questionnaire about your work, personality and goals, and we handle everything from there.
+          </p>
+          <p>
+            Every Monday, Wednesday and Friday, a ready-to-post LinkedIn post lands in your inbox
+            between 7am and 10am AEST. All you do is copy and paste it into LinkedIn. No writing,
+            no stressing, no staring at a blank screen.
+          </p>
+          <p>
+            The posts are written to sound like you. Your industry, your tone, your stories. Clients
+            include business owners, real estate agents, mortgage brokers, tradies, financial advisers
+            and professionals across Australia who want to stay visible on LinkedIn without it taking
+            up their time.
+          </p>
+        </div>
 
         {/* Stat tiles */}
         <div className="grid md:grid-cols-3 gap-6">

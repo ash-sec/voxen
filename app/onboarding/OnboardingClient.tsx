@@ -42,7 +42,7 @@ function CelebrationScreen({
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#0A0F1E" }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#0f172a" }}>
       {/* Orbs */}
       <div className="orb w-80 h-80 top-0 right-0" style={{ background: "rgba(59,130,246,0.1)" }} />
       <div className="orb w-64 h-64 bottom-0 left-0" style={{ background: "rgba(99,102,241,0.08)", animationDelay: "2s" }} />
@@ -300,7 +300,7 @@ export default function OnboardingClient() {
 
       <div
         className="min-h-screen flex flex-col items-center justify-center px-4 py-10 relative overflow-hidden"
-        style={{ background: "#0A0F1E" }}
+        style={{ background: "#0f172a" }}
       >
         <div className="orb w-96 h-96 top-0 right-0 pointer-events-none" style={{ background: "rgba(59,130,246,0.07)" }} />
         <div className="orb w-64 h-64 bottom-10 left-0 pointer-events-none" style={{ background: "rgba(99,102,241,0.05)", animationDelay: "3s" }} />

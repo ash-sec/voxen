@@ -66,7 +66,7 @@ export default function DashboardShell({
   }
 
   return (
-    <div className="min-h-screen flex" style={{ background: "#0A0F1E" }}>
+    <div className="min-h-screen flex" style={{ background: "#0f172a" }}>
       {/* Sidebar — desktop */}
       <aside className="hidden md:flex w-64 flex-col fixed inset-y-0 left-0 border-r border-white/5"
         style={{ background: "#080D1A" }}>

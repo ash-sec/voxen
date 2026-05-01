@@ -43,7 +43,7 @@ export default function LoginVerifyClient() {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: "#0A0F1E" }}
+      style={{ background: "#0f172a" }}
     >
       <div className="w-full max-w-md text-center">
         <Link href="/">

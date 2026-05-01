@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen" style={{ background: "#0A0F1E" }}>
+      <main className="min-h-screen" style={{ background: "#0f172a" }}>
         {/* Header */}
         <section className="relative pt-32 pb-12 px-6 overflow-hidden">
           <div

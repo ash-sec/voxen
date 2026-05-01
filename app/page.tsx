@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import WhatIsVoxen from "@/components/WhatIsVoxen";
-import WhyLinkedIn from "@/components/WhyLinkedIn";
+import BeforeAfter from "@/components/BeforeAfter";
 import WhoItsFor from "@/components/WhoItsFor";
+import WhyLinkedIn from "@/components/WhyLinkedIn";
 import HowItWorks from "@/components/HowItWorks";
 import PricingSection from "@/components/PricingSection";
 import Testimonials from "@/components/Testimonials";
@@ -16,8 +17,9 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <WhatIsVoxen />
-        <WhyLinkedIn />
+        <BeforeAfter />
         <WhoItsFor />
+        <WhyLinkedIn />
         <HowItWorks />
         <PricingSection />
         <Testimonials />

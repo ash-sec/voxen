@@ -15,7 +15,7 @@ export default function BlogPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen" style={{ background: "#0A0F1E" }}>
+      <main className="min-h-screen" style={{ background: "#0f172a" }}>
         {/* Hero */}
         <section className="relative pt-32 pb-20 px-6 overflow-hidden">
           <div
