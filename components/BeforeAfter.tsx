@@ -28,6 +28,14 @@ export default function BeforeAfter() {
           if (entry.isIntersecting) {
             entry.target.classList.add("section-visible");
             entry.target.classList.remove("section-hidden");
+
+            const cards = entry.target.querySelectorAll(".stagger-card");
+            cards.forEach((card, i) => {
+              setTimeout(() => {
+                card.classList.add("card-visible");
+                card.classList.remove("card-hidden");
+              }, i * 120);
+            });
           }
         });
       },
@@ -41,70 +49,80 @@ export default function BeforeAfter() {
   }, []);
 
   return (
-    <section id="before-after" className="py-24 px-6 relative overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(59,130,246,0.04) 0%, transparent 70%)",
-        }}
-      />
-
+    <section id="before-after" className="py-24 px-6 bg-white">
       <div ref={sectionRef} className="section-hidden max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="badge inline-flex mb-4">The Difference</div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a]">
             Your LinkedIn. Before and{" "}
-            <span className="text-blue-400">after Voxen.</span>
+            <span className="gradient-text">after Voxen.</span>
           </h2>
         </div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Before */}
-          <div className="rounded-2xl border border-red-500/30 bg-red-500/5 p-8">
+          <div
+            className="stagger-card card-hidden rounded-2xl border p-8"
+            style={{ background: "#fef2f2", borderColor: "#fca5a5" }}
+          >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div
+                className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ background: "#fee2e2", border: "1px solid #fca5a5" }}
+              >
+                <svg className="w-4 h-4" style={{ color: "#ef4444" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
-              <span className="text-white font-bold text-lg">Without Voxen</span>
+              <span className="text-[#0f172a] font-bold text-lg">Without Voxen</span>
             </div>
             <ul className="space-y-4">
               {beforeItems.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="mt-0.5 w-5 h-5 rounded-full bg-red-500/15 border border-red-500/25 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div
+                    className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ background: "#fee2e2", border: "1px solid #fca5a5" }}
+                  >
+                    <svg className="w-3 h-3" style={{ color: "#ef4444" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </div>
-                  <span className="text-slate-400 text-sm leading-relaxed">{item}</span>
+                  <span className="text-[#475569] text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* After */}
-          <div className="rounded-2xl border border-green-500/30 bg-green-500/5 p-8">
+          <div
+            className="stagger-card card-hidden rounded-2xl border p-8"
+            style={{ background: "#f0fdf4", borderColor: "#86efac" }}
+          >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div
+                className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ background: "#dcfce7", border: "1px solid #86efac" }}
+              >
+                <svg className="w-4 h-4" style={{ color: "#22c55e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-white font-bold text-lg">With Voxen</span>
+              <span className="text-[#0f172a] font-bold text-lg">With Voxen</span>
             </div>
             <ul className="space-y-4">
               {afterItems.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="mt-0.5 w-5 h-5 rounded-full bg-green-500/15 border border-green-500/25 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div
+                    className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ background: "#dcfce7", border: "1px solid #86efac" }}
+                  >
+                    <svg className="w-3 h-3" style={{ color: "#22c55e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-slate-300 text-sm leading-relaxed">{item}</span>
+                  <span className="text-[#475569] text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>

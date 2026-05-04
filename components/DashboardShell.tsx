@@ -66,16 +66,16 @@ export default function DashboardShell({
   }
 
   return (
-    <div className="min-h-screen flex" style={{ background: "#0f172a" }}>
+    <div className="min-h-screen flex" style={{ background: "#f8fafc" }}>
       {/* Sidebar — desktop */}
-      <aside className="hidden md:flex w-64 flex-col fixed inset-y-0 left-0 border-r border-white/5"
-        style={{ background: "#080D1A" }}>
+      <aside
+        className="hidden md:flex w-64 flex-col fixed inset-y-0 left-0 border-r border-[#e2e8f0]"
+        style={{ background: "#ffffff" }}
+      >
         {/* Logo */}
-        <div className="px-6 py-6 border-b border-white/5">
+        <div className="px-6 py-6 border-b border-[#e2e8f0]">
           <Link href="/">
-            <span className="text-xl font-bold" style={{ color: "#ffffff", textShadow: "0 0 20px rgba(59,130,246,0.5)" }}>
-              Voxen
-            </span>
+            <span className="text-xl font-bold text-[#0f172a]">Voxen</span>
           </Link>
         </div>
 
@@ -89,14 +89,14 @@ export default function DashboardShell({
                 href={item.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-blue-500/15 text-white border border-blue-500/30"
-                    : "text-slate-400 hover:text-white hover:bg-white/5"
+                    ? "bg-blue-50 text-[#2563eb] border border-[#bfdbfe]"
+                    : "text-[#475569] hover:text-[#0f172a] hover:bg-slate-50"
                 }`}
               >
-                <span className={isActive ? "text-blue-400" : ""}>{item.icon}</span>
+                <span className={isActive ? "text-[#2563eb]" : "text-[#94a3b8]"}>{item.icon}</span>
                 {item.label}
                 {item.soon && (
-                  <span className="ml-auto text-xs text-slate-600 font-normal">Soon</span>
+                  <span className="ml-auto text-xs text-[#94a3b8] font-normal">Soon</span>
                 )}
               </Link>
             );
@@ -104,21 +104,24 @@ export default function DashboardShell({
         </nav>
 
         {/* User info */}
-        <div className="px-4 py-4 border-t border-white/5">
+        <div className="px-4 py-4 border-t border-[#e2e8f0]">
           <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl">
-            <div className="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-xs font-bold text-blue-400">
+            <div
+              className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 border"
+              style={{ background: "#dbeafe", borderColor: "#bfdbfe" }}
+            >
+              <span className="text-xs font-bold text-[#2563eb]">
                 {subscriber.name.charAt(0).toUpperCase()}
               </span>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-white text-sm font-medium truncate">{subscriber.name}</p>
-              <p className="text-slate-500 text-xs truncate">{subscriber.email}</p>
+              <p className="text-[#0f172a] text-sm font-medium truncate">{subscriber.name}</p>
+              <p className="text-[#94a3b8] text-xs truncate">{subscriber.email}</p>
             </div>
           </div>
           <button
             onClick={handleLogout}
-            className="w-full mt-2 px-3 py-2 text-xs text-slate-500 hover:text-white hover:bg-white/5 rounded-xl transition-all text-left flex items-center gap-2"
+            className="w-full mt-2 px-3 py-2 text-xs text-[#94a3b8] hover:text-[#0f172a] hover:bg-slate-50 rounded-xl transition-all text-left flex items-center gap-2"
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -130,19 +133,20 @@ export default function DashboardShell({
       </aside>
 
       {/* Mobile top bar */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 navbar-glass px-4 h-14 flex items-center justify-between">
+      <div
+        className="md:hidden fixed top-0 left-0 right-0 z-50 border-b border-[#e2e8f0] px-4 h-14 flex items-center justify-between"
+        style={{ background: "#ffffff" }}
+      >
         <Link href="/">
-          <span className="text-xl font-bold" style={{ color: "#ffffff", textShadow: "0 0 20px rgba(59,130,246,0.5)" }}>
-            Voxen
-          </span>
+          <span className="text-xl font-bold text-[#0f172a]">Voxen</span>
         </Link>
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="flex flex-col gap-1.5 p-2"
         >
-          <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-5 h-0.5 bg-[#0f172a] transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-5 h-0.5 bg-[#0f172a] transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-5 h-0.5 bg-[#0f172a] transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
@@ -153,13 +157,13 @@ export default function DashboardShell({
           onClick={() => setMobileOpen(false)}
         >
           <div
-            className="w-64 h-full border-r border-white/5 flex flex-col"
-            style={{ background: "#080D1A" }}
+            className="w-64 h-full border-r border-[#e2e8f0] flex flex-col"
+            style={{ background: "#ffffff" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="px-6 py-5 border-b border-white/5 mt-14">
-              <p className="text-white text-sm font-medium">{subscriber.name}</p>
-              <p className="text-slate-500 text-xs">{subscriber.email}</p>
+            <div className="px-6 py-5 border-b border-[#e2e8f0] mt-14">
+              <p className="text-[#0f172a] text-sm font-medium">{subscriber.name}</p>
+              <p className="text-[#94a3b8] text-xs">{subscriber.email}</p>
             </div>
             <nav className="flex-1 px-4 py-4 space-y-1">
               {NAV_ITEMS.map((item) => {
@@ -171,21 +175,21 @@ export default function DashboardShell({
                     onClick={() => setMobileOpen(false)}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                       isActive
-                        ? "bg-blue-500/15 text-white border border-blue-500/30"
-                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                        ? "bg-blue-50 text-[#2563eb] border border-[#bfdbfe]"
+                        : "text-[#475569] hover:text-[#0f172a] hover:bg-slate-50"
                     }`}
                   >
-                    <span className={isActive ? "text-blue-400" : ""}>{item.icon}</span>
+                    <span className={isActive ? "text-[#2563eb]" : "text-[#94a3b8]"}>{item.icon}</span>
                     {item.label}
-                    {item.soon && <span className="ml-auto text-xs text-slate-600">Soon</span>}
+                    {item.soon && <span className="ml-auto text-xs text-[#94a3b8]">Soon</span>}
                   </Link>
                 );
               })}
             </nav>
-            <div className="px-4 pb-6 border-t border-white/5 pt-4">
+            <div className="px-4 pb-6 border-t border-[#e2e8f0] pt-4">
               <button
                 onClick={handleLogout}
-                className="w-full px-3 py-2.5 text-sm text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all text-left flex items-center gap-2"
+                className="w-full px-3 py-2.5 text-sm text-[#475569] hover:text-[#0f172a] hover:bg-slate-50 rounded-xl transition-all text-left flex items-center gap-2"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -195,7 +199,7 @@ export default function DashboardShell({
               </button>
             </div>
           </div>
-          <div className="flex-1 bg-black/50 backdrop-blur-sm" />
+          <div className="flex-1 bg-black/30 backdrop-blur-sm" />
         </div>
       )}
 

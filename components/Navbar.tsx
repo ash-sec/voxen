@@ -8,7 +8,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -20,9 +20,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "navbar-glass" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#e2e8f0] transition-shadow duration-300"
+      style={{ boxShadow: scrolled ? "0 1px 3px rgba(0,0,0,0.1)" : "none" }}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -41,14 +40,14 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-[#475569] hover:text-[#0f172a] transition-colors"
             >
               {link.label}
             </button>
           ))}
           <Link
             href="/blog"
-            className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            className="text-sm font-medium text-[#475569] hover:text-[#0f172a] transition-colors"
           >
             Blog
           </Link>
@@ -71,17 +70,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-5 h-0.5 bg-[#0f172a] transition-all duration-300 ${
               mobileOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-5 h-0.5 bg-[#0f172a] transition-all duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-5 h-0.5 bg-[#0f172a] transition-all duration-300 ${
               mobileOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
@@ -90,7 +89,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden navbar-glass border-t border-blue-500/10 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-[#e2e8f0] px-6 py-4 flex flex-col gap-4">
           {[
             { label: "How It Works", id: "how-it-works" },
             { label: "Who It's For", id: "who-its-for" },
@@ -100,14 +99,14 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className="text-left text-sm font-medium text-slate-300 hover:text-white transition-colors py-1"
+              className="text-left text-sm font-medium text-[#475569] hover:text-[#0f172a] transition-colors py-1"
             >
               {link.label}
             </button>
           ))}
           <Link
             href="/blog"
-            className="text-left text-sm font-medium text-slate-300 hover:text-white transition-colors py-1"
+            className="text-left text-sm font-medium text-[#475569] hover:text-[#0f172a] transition-colors py-1"
             onClick={() => setMobileOpen(false)}
           >
             Blog

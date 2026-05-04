@@ -59,18 +59,24 @@ function AccordionItem({ q, a, isOpen, onToggle }: {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="glass-card overflow-hidden">
+    <div
+      className="bg-white border rounded-xl overflow-hidden transition-colors duration-200"
+      style={{ borderColor: isOpen ? "#bfdbfe" : "#e2e8f0" }}
+    >
       <button
         onClick={onToggle}
-        className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
+        className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left hover:bg-slate-50 transition-colors duration-150"
       >
-        <span className="text-white font-medium text-sm md:text-base">{q}</span>
+        <span className="text-[#0f172a] font-medium text-sm md:text-base">{q}</span>
         <div
-          className={`flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center transition-all duration-300 ${
-            isOpen ? "rotate-45 border-blue-500/40 bg-blue-500/20" : ""
-          }`}
+          className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
+          style={{
+            background: isOpen ? "#dbeafe" : "#f1f5f9",
+            border: `1px solid ${isOpen ? "#bfdbfe" : "#e2e8f0"}`,
+            transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+          }}
         >
-          <svg className="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-4 h-4" style={{ color: "#2563eb" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
           </svg>
         </div>
@@ -83,7 +89,7 @@ function AccordionItem({ q, a, isOpen, onToggle }: {
           maxHeight: isOpen ? `${contentRef.current?.scrollHeight ?? 300}px` : "0px",
         }}
       >
-        <p className="px-6 pb-5 text-slate-400 text-sm leading-relaxed">{a}</p>
+        <p className="px-6 pb-5 text-[#475569] text-sm leading-relaxed">{a}</p>
       </div>
     </div>
   );
@@ -111,14 +117,14 @@ export default function FAQSection() {
   }, []);
 
   return (
-    <section id="faq" className="py-24 px-6">
+    <section id="faq" className="py-24 px-6 bg-white">
       <div ref={sectionRef} className="section-hidden max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="badge inline-flex mb-4">FAQ</div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a]">
             Got questions?{" "}
-            <span className="gradient-text">We've got answers.</span>
+            <span className="gradient-text">We&apos;ve got answers.</span>
           </h2>
         </div>
 
@@ -136,10 +142,10 @@ export default function FAQSection() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-10 text-center glass-card p-8">
-          <h3 className="text-white font-semibold mb-2">Still have questions?</h3>
-          <p className="text-slate-400 text-sm mb-4">
-            Shoot us an email and we'll get back to you within 24 hours.
+        <div className="mt-10 text-center bg-white border border-[#e2e8f0] shadow-sm rounded-2xl p-8">
+          <h3 className="text-[#0f172a] font-semibold mb-2">Still have questions?</h3>
+          <p className="text-[#475569] text-sm mb-4">
+            Shoot us an email and we&apos;ll get back to you within 24 hours.
           </p>
           <a
             href="mailto:voxensupport.au@gmail.com"

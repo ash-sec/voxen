@@ -45,6 +45,14 @@ export default function WhoItsFor() {
           if (entry.isIntersecting) {
             entry.target.classList.add("section-visible");
             entry.target.classList.remove("section-hidden");
+
+            const cards = entry.target.querySelectorAll(".stagger-card");
+            cards.forEach((card, i) => {
+              setTimeout(() => {
+                card.classList.add("card-visible");
+                card.classList.remove("card-hidden");
+              }, i * 100);
+            });
           }
         });
       },
@@ -60,21 +68,21 @@ export default function WhoItsFor() {
   return (
     <section
       id="who-its-for"
-      className="py-24 px-6 relative overflow-hidden"
-      style={{ background: "rgba(30, 41, 59, 0.3)" }}
+      className="py-24 px-6"
+      style={{ background: "#f1f5f9" }}
     >
       <div ref={sectionRef} className="section-hidden max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6">
           <div className="badge inline-flex mb-4">Who It&apos;s For</div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a]">
             Built for Australian professionals who are{" "}
-            <span className="text-blue-400">too busy to write.</span>
+            <span className="gradient-text">too busy to write.</span>
           </h2>
         </div>
 
         {/* Subtext */}
-        <p className="text-slate-400 text-lg text-center max-w-2xl mx-auto mb-14">
+        <p className="text-[#475569] text-lg text-center max-w-2xl mx-auto mb-14">
           If you have a LinkedIn profile and not enough time to post on it, Voxen was built for you.
         </p>
 
@@ -83,12 +91,11 @@ export default function WhoItsFor() {
           {industries.map((industry, i) => (
             <div
               key={i}
-              className="rounded-xl border border-blue-500/15 p-6"
-              style={{ background: "#1e293b" }}
+              className="stagger-card card-hidden bg-white border border-[#e2e8f0] shadow-sm rounded-xl p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 cursor-default"
             >
               <div className="text-3xl mb-3">{industry.emoji}</div>
-              <h3 className="text-white font-bold text-base mb-2">{industry.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{industry.text}</p>
+              <h3 className="text-[#0f172a] font-bold text-base mb-2">{industry.title}</h3>
+              <p className="text-[#475569] text-sm leading-relaxed">{industry.text}</p>
             </div>
           ))}
         </div>
