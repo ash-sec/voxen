@@ -49,12 +49,12 @@ export default function BeforeAfter() {
   }, []);
 
   return (
-    <section id="before-after" className="py-24 px-6 bg-white">
+    <section id="before-after" className="py-24 px-6">
       <div ref={sectionRef} className="section-hidden max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="badge inline-flex mb-4">The Difference</div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a]">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
             Your LinkedIn. Before and{" "}
             <span className="gradient-text">after Voxen.</span>
           </h2>
@@ -65,31 +65,31 @@ export default function BeforeAfter() {
           {/* Before */}
           <div
             className="stagger-card card-hidden rounded-2xl border p-8"
-            style={{ background: "#fef2f2", borderColor: "#fca5a5" }}
+            style={{ background: "rgba(239,68,68,0.06)", borderColor: "rgba(239,68,68,0.25)" }}
           >
             <div className="flex items-center gap-3 mb-6">
               <div
                 className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ background: "#fee2e2", border: "1px solid #fca5a5" }}
+                style={{ background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)" }}
               >
-                <svg className="w-4 h-4" style={{ color: "#ef4444" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
-              <span className="text-[#0f172a] font-bold text-lg">Without Voxen</span>
+              <span className="text-white font-bold text-lg">Without Voxen</span>
             </div>
             <ul className="space-y-4">
               {beforeItems.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <div
                     className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: "#fee2e2", border: "1px solid #fca5a5" }}
+                    style={{ background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)" }}
                   >
-                    <svg className="w-3 h-3" style={{ color: "#ef4444" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-3 h-3 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </div>
-                  <span className="text-[#475569] text-sm leading-relaxed">{item}</span>
+                  <span className="text-slate-400 text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -98,31 +98,31 @@ export default function BeforeAfter() {
           {/* After */}
           <div
             className="stagger-card card-hidden rounded-2xl border p-8"
-            style={{ background: "#f0fdf4", borderColor: "#86efac" }}
+            style={{ background: "rgba(34,197,94,0.06)", borderColor: "rgba(34,197,94,0.25)" }}
           >
             <div className="flex items-center gap-3 mb-6">
               <div
                 className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ background: "#dcfce7", border: "1px solid #86efac" }}
+                style={{ background: "rgba(34,197,94,0.15)", border: "1px solid rgba(34,197,94,0.3)" }}
               >
-                <svg className="w-4 h-4" style={{ color: "#22c55e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-[#0f172a] font-bold text-lg">With Voxen</span>
+              <span className="text-white font-bold text-lg">With Voxen</span>
             </div>
             <ul className="space-y-4">
               {afterItems.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <div
                     className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: "#dcfce7", border: "1px solid #86efac" }}
+                    style={{ background: "rgba(34,197,94,0.15)", border: "1px solid rgba(34,197,94,0.3)" }}
                   >
-                    <svg className="w-3 h-3" style={{ color: "#22c55e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-3 h-3 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-[#475569] text-sm leading-relaxed">{item}</span>
+                  <span className="text-slate-400 text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>

@@ -26,37 +26,37 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section id="cta" className="py-24 px-6" style={{ background: "#f1f5f9" }}>
+    <section id="cta" className="py-24 px-6">
       <div ref={sectionRef} className="section-hidden max-w-3xl mx-auto text-center">
         <div className="badge inline-flex mb-6">Get Started</div>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] leading-tight mb-2">
+        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-2">
           Stop putting it off.
         </h2>
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8" style={{ color: "#2563eb" }}>
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8 gradient-text">
           Start showing up.
         </h2>
 
-        <p className="text-[#475569] text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+        <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
           Every week you don&apos;t post is a week your competitors are. Voxen handles it all. You just copy and paste.
         </p>
 
         {/* Trust signals */}
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10">
-          <span className="flex items-center gap-2 text-sm text-[#475569]">
-            <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#22c55e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span className="flex items-center gap-2 text-sm text-slate-400">
+            <svg className="w-4 h-4 flex-shrink-0 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
             3 posts delivered every week
           </span>
-          <span className="flex items-center gap-2 text-sm text-[#475569]">
-            <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#22c55e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span className="flex items-center gap-2 text-sm text-slate-400">
+            <svg className="w-4 h-4 flex-shrink-0 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
             Cancel anytime, no lock-in
           </span>
-          <span className="flex items-center gap-2 text-sm text-[#475569]">
-            <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#22c55e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span className="flex items-center gap-2 text-sm text-slate-400">
+            <svg className="w-4 h-4 flex-shrink-0 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
             Setup takes 2 minutes
@@ -73,7 +73,7 @@ export default function Testimonials() {
           </svg>
         </Link>
 
-        <p className="text-[#94a3b8] text-sm">
+        <p className="text-slate-500 text-sm">
           No lock-in contract. Cancel anytime from your account.
         </p>
       </div>

@@ -61,7 +61,7 @@ export default function WhatIsVoxen() {
   }, []);
 
   return (
-    <section id="what-is-voxen" className="py-24 px-6" style={{ background: "#f1f5f9" }}>
+    <section id="what-is-voxen" className="py-24 px-6">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -76,14 +76,14 @@ export default function WhatIsVoxen() {
             </svg>
             About Voxen
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a]">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
             What is{" "}
             <span className="gradient-text">Voxen?</span>
           </h2>
         </div>
 
         {/* Body */}
-        <div className="space-y-4 text-[#475569] text-lg leading-relaxed text-center max-w-3xl mx-auto mb-14">
+        <div className="space-y-4 text-slate-400 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-14">
           <p>
             Voxen is an Australian LinkedIn ghostwriting service. You sign up, fill in a short
             questionnaire about your work, personality and goals, and we handle everything from there.
@@ -104,12 +104,9 @@ export default function WhatIsVoxen() {
         {/* Stat tiles */}
         <div className="grid md:grid-cols-3 gap-6">
           {tiles.map((tile, i) => (
-            <div
-              key={i}
-              className="bg-white border border-[#e2e8f0] shadow-sm rounded-xl p-8 text-center"
-            >
-              <p className="text-xl font-bold text-[#2563eb] mb-2">{tile.value}</p>
-              <p className="text-[#475569] text-sm">{tile.sub}</p>
+            <div key={i} className="glass-card p-8 text-center">
+              <p className="text-xl font-bold text-blue-400 mb-2">{tile.value}</p>
+              <p className="text-slate-400 text-sm">{tile.sub}</p>
             </div>
           ))}
         </div>
