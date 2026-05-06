@@ -10,70 +10,65 @@ export default function Testimonials() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("section-visible");
-            entry.target.classList.remove("section-hidden");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
         });
       },
       { threshold: 0.1 }
     );
     const el = sectionRef.current;
     if (el) observer.observe(el);
-    return () => {
-      if (el) observer.unobserve(el);
-    };
+    return () => { if (el) observer.unobserve(el); };
   }, []);
 
   return (
-    <section id="cta" className="py-24 px-6">
-      <div ref={sectionRef} className="section-hidden max-w-3xl mx-auto text-center">
-        <div className="badge inline-flex mb-6">Get Started</div>
+    <section id="cta" className="bg-[#0a0a0a] py-24 px-6">
+      <div
+        ref={sectionRef}
+        className="fade-in-up max-w-[640px] mx-auto text-center"
+      >
+        {/* Label */}
+        <div className="flex items-center justify-center gap-2 mb-6">
+          <svg className="w-3 h-3 fill-blue-500 flex-shrink-0" viewBox="0 0 10 10">
+            <path d="M5 0L10 5L5 10L0 5Z" />
+          </svg>
+          <span className="text-[#a1a1aa] text-sm uppercase tracking-widest">Get Started</span>
+        </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-2">
-          Stop putting it off.
-        </h2>
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8 gradient-text">
-          Start showing up.
-        </h2>
+        {/* Headings */}
+        <h2 className="heading-cta text-white">Stop putting it off.</h2>
+        <h2 className="heading-cta text-blue-500">Start showing up.</h2>
 
-        <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+        {/* Body */}
+        <p className="text-[#a1a1aa] text-[1.05rem] leading-[1.65] mt-5">
           Every week you don&apos;t post is a week your competitors are. Voxen handles it all. You just copy and paste.
         </p>
 
         {/* Trust signals */}
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10">
-          <span className="flex items-center gap-2 text-sm text-slate-400">
-            <svg className="w-4 h-4 flex-shrink-0 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-            </svg>
-            3 posts delivered every week
-          </span>
-          <span className="flex items-center gap-2 text-sm text-slate-400">
-            <svg className="w-4 h-4 flex-shrink-0 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-            </svg>
-            Cancel anytime, no lock-in
-          </span>
-          <span className="flex items-center gap-2 text-sm text-slate-400">
-            <svg className="w-4 h-4 flex-shrink-0 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-            </svg>
-            Setup takes 2 minutes
-          </span>
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-8">
+          {[
+            "3 posts delivered every week",
+            "Cancel anytime, no lock-in",
+            "Setup takes 2 minutes",
+          ].map((signal) => (
+            <span key={signal} className="flex items-center gap-2 text-sm text-[#a1a1aa]">
+              <svg className="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              {signal}
+            </span>
+          ))}
         </div>
 
+        {/* CTA */}
         <Link
           href="/signup"
-          className="btn-primary inline-flex items-center gap-2 text-base px-8 py-4 mb-5"
+          className="mt-10 max-w-[320px] mx-auto bg-[#3b82f6] hover:bg-[#2563eb] hover:scale-[1.01] active:scale-[0.99] text-white font-semibold py-4 rounded-xl transition-[background-color,transform] duration-200 flex items-center justify-center gap-2 text-base"
         >
-          Get Started / $250/month
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
+          Get Started / $250/month &#8594;
         </Link>
 
-        <p className="text-slate-500 text-sm">
+        {/* Fine print */}
+        <p className="text-[#52525b] text-xs mt-4">
           No lock-in contract. Cancel anytime from your account.
         </p>
       </div>

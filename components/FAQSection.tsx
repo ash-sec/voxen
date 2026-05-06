@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const faqs = [
+const FAQS = [
   {
     q: "How do posts get written in my voice?",
     a: "When you sign up, you fill in a short onboarding questionnaire — about your job, your personality, topics you care about, things that frustrate you, and even the slang you use at work. We use all of that to create content that reads like you wrote it on a good day.",
@@ -53,47 +53,34 @@ const faqs = [
   },
 ];
 
-function AccordionItem({ q, a, isOpen, onToggle }: {
-  q: string; a: string; isOpen: boolean; onToggle: () => void;
+function AccordionItem({
+  q,
+  a,
+  isOpen,
+  onToggle,
+}: {
+  q: string;
+  a: string;
+  isOpen: boolean;
+  onToggle: () => void;
 }) {
-  const contentRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div
-      className="rounded-xl overflow-hidden transition-all duration-200"
-      style={{
-        background: "rgba(30,41,59,0.6)",
-        border: `1px solid ${isOpen ? "rgba(59,130,246,0.35)" : "#334155"}`,
-        backdropFilter: "blur(20px)",
-      }}
-    >
+    <div className="border-b border-white/[0.06]">
       <button
         onClick={onToggle}
-        className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left"
+        className="w-full py-5 flex items-center justify-between gap-4 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
       >
-        <span className="text-white font-medium text-sm md:text-base">{q}</span>
-        <div
-          className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
-          style={{
-            background: isOpen ? "rgba(59,130,246,0.2)" : "rgba(255,255,255,0.05)",
-            border: `1px solid ${isOpen ? "rgba(59,130,246,0.4)" : "rgba(255,255,255,0.1)"}`,
-            transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
-          }}
-        >
-          <svg className="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-          </svg>
-        </div>
+        <span className="text-white font-semibold text-[0.95rem] leading-snug">{q}</span>
+        <span className="flex-shrink-0 text-blue-500 text-xl leading-none" aria-hidden>
+          {isOpen ? "−" : "+"}
+        </span>
       </button>
-
       <div
-        ref={contentRef}
-        className="overflow-hidden transition-all duration-300 ease-in-out"
-        style={{
-          maxHeight: isOpen ? `${contentRef.current?.scrollHeight ?? 300}px` : "0px",
-        }}
+        className={`overflow-hidden transition-[max-height] duration-300 ease-out ${
+          isOpen ? "max-h-[500px]" : "max-h-0"
+        }`}
       >
-        <p className="px-6 pb-5 text-slate-400 text-sm leading-relaxed">{a}</p>
+        <p className="text-[#a1a1aa] text-sm leading-[1.7] pb-5">{a}</p>
       </div>
     </div>
   );
@@ -107,10 +94,7 @@ export default function FAQSection() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("section-visible");
-            entry.target.classList.remove("section-hidden");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
         });
       },
       { threshold: 0.1 }
@@ -121,20 +105,28 @@ export default function FAQSection() {
   }, []);
 
   return (
-    <section id="faq" className="py-24 px-6">
-      <div ref={sectionRef} className="section-hidden max-w-3xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="badge inline-flex mb-4">FAQ</div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Got questions?{" "}
-            <span className="gradient-text">We&apos;ve got answers.</span>
-          </h2>
+    <section id="faq" className="bg-black py-24 px-6">
+      <div
+        ref={sectionRef}
+        className="fade-in-up max-w-[720px] mx-auto"
+      >
+        {/* Label */}
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <svg className="w-3 h-3 fill-blue-500 flex-shrink-0" viewBox="0 0 10 10">
+            <path d="M5 0L10 5L5 10L0 5Z" />
+          </svg>
+          <span className="text-[#a1a1aa] text-sm uppercase tracking-widest">FAQ</span>
         </div>
 
+        {/* Heading */}
+        <h2 className="heading-faq text-white text-center mt-4">
+          Got questions? We&apos;ve got{" "}
+          <span className="text-blue-500">answers.</span>
+        </h2>
+
         {/* Accordion */}
-        <div className="space-y-3">
-          {faqs.map((faq, i) => (
+        <div className="mt-12">
+          {FAQS.map((faq, i) => (
             <AccordionItem
               key={i}
               q={faq.q}
@@ -146,19 +138,15 @@ export default function FAQSection() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-10 text-center glass-card p-8">
+        <div className="mt-12 text-center">
           <h3 className="text-white font-semibold mb-2">Still have questions?</h3>
-          <p className="text-slate-400 text-sm mb-4">
+          <p className="text-[#a1a1aa] text-sm mb-3">
             Shoot us an email and we&apos;ll get back to you within 24 hours.
           </p>
           <a
             href="mailto:voxensupport.au@gmail.com"
-            className="btn-primary inline-flex items-center gap-2 text-sm"
+            className="text-blue-500 hover:underline text-sm transition-[opacity] duration-200"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-            </svg>
             voxensupport.au@gmail.com
           </a>
         </div>

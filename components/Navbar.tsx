@@ -8,7 +8,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
         scrolled ? "navbar-glass" : "bg-transparent"
       }`}
     >
@@ -41,14 +41,14 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-[#a1a1aa] hover:text-white transition-[color] duration-200"
             >
               {link.label}
             </button>
           ))}
           <Link
             href="/blog"
-            className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            className="text-sm font-medium text-[#a1a1aa] hover:text-white transition-[color] duration-200"
           >
             Blog
           </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <button
             onClick={() => scrollTo("pricing")}
-            className="btn-primary text-sm"
+            className="bg-[#3b82f6] hover:bg-[#2563eb] text-white text-sm font-semibold px-5 py-2 rounded-lg transition-[background-color] duration-200"
           >
             Get Started
           </button>
@@ -71,17 +71,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-5 h-0.5 bg-white transition-[transform,opacity] duration-300 ${
               mobileOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-5 h-0.5 bg-white transition-[transform,opacity] duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-5 h-0.5 bg-white transition-[transform,opacity] duration-300 ${
               mobileOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
@@ -90,7 +90,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden navbar-glass border-t border-blue-500/10 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden navbar-glass border-t border-white/[0.06] px-6 py-4 flex flex-col gap-4">
           {[
             { label: "How It Works", id: "how-it-works" },
             { label: "Who It's For", id: "who-its-for" },
@@ -100,21 +100,21 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className="text-left text-sm font-medium text-slate-300 hover:text-white transition-colors py-1"
+              className="text-left text-sm font-medium text-[#a1a1aa] hover:text-white transition-[color] duration-200 py-1"
             >
               {link.label}
             </button>
           ))}
           <Link
             href="/blog"
-            className="text-left text-sm font-medium text-slate-300 hover:text-white transition-colors py-1"
+            className="text-left text-sm font-medium text-[#a1a1aa] hover:text-white transition-[color] duration-200 py-1"
             onClick={() => setMobileOpen(false)}
           >
             Blog
           </Link>
           <button
             onClick={() => scrollTo("pricing")}
-            className="btn-primary text-sm w-full mt-2"
+            className="bg-[#3b82f6] hover:bg-[#2563eb] text-white text-sm font-semibold w-full mt-2 py-2.5 rounded-lg transition-[background-color] duration-200"
           >
             Get Started
           </button>

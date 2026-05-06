@@ -1,10 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import WhatIsVoxen from "@/components/WhatIsVoxen";
-import BeforeAfter from "@/components/BeforeAfter";
-import WhoItsFor from "@/components/WhoItsFor";
+import StickyScroll from "@/components/StickyScroll";
 import WhyLinkedIn from "@/components/WhyLinkedIn";
-import HowItWorks from "@/components/HowItWorks";
 import PricingSection from "@/components/PricingSection";
 import Testimonials from "@/components/Testimonials";
 import FAQSection from "@/components/FAQSection";
@@ -16,11 +13,8 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
-        <WhatIsVoxen />
-        <BeforeAfter />
-        <WhoItsFor />
+        <StickyScroll />
         <WhyLinkedIn />
-        <HowItWorks />
         <PricingSection />
         <Testimonials />
         <FAQSection />
