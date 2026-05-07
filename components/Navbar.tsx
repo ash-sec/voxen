@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="Voxen" height={32} style={{ height: "32px", width: "auto" }} />
+          <img src="/logo.png" alt="Voxen" width={32} height={32} />
         </Link>
 
         {/* Desktop nav */}

@@ -84,9 +84,7 @@ export default function HeroSection() {
               <div className="bg-[#0d0d0d] p-5 text-left">
                 {/* Email header row */}
                 <div className="flex items-start gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-xs font-bold text-blue-400">V</span>
-                  </div>
+                  <img src="/logo.png" width={28} height={28} className="rounded-full object-cover flex-shrink-0" alt="Voxen" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2">
                       <span className="text-sm font-medium text-white">Voxen</span>

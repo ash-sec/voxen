@@ -7,6 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
           {/* Brand */}
           <div className="text-center md:text-left">
+            <img src="/logo.png" width={28} height={28} className="block mb-3" alt="Voxen" />
             <span className="text-xl font-bold text-white">Voxen</span>
             <p className="text-[#52525b] text-sm mt-1">Your LinkedIn. Written For You.</p>
             <p className="text-[#52525b] text-sm mt-2">
