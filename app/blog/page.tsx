@@ -15,25 +15,16 @@ export default function BlogPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen" style={{ background: "#0f172a" }}>
+      <main className="min-h-screen bg-black">
         {/* Hero */}
-        <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-          <div
-            className="orb w-96 h-96 top-0 -right-20 pointer-events-none"
-            style={{ background: "rgba(59,130,246,0.08)" }}
-          />
-          <div
-            className="orb w-72 h-72 top-20 -left-16 pointer-events-none"
-            style={{ background: "rgba(99,102,241,0.06)", animationDelay: "3s" }}
-          />
-
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <section className="pt-32 pb-20 px-6">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="badge inline-flex mb-6">The Voxen Blog</div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Insights for{" "}
-              <span className="gradient-text">Australian professionals</span>
+              <span className="text-[#3b82f6]">Australian professionals</span>
             </h1>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#a1a1aa] max-w-2xl mx-auto leading-relaxed">
               Practical advice on building your LinkedIn presence, growing your
               professional brand, and making the most of your online reputation.
             </p>
@@ -44,17 +35,20 @@ export default function BlogPage() {
         <section className="px-6 pb-24">
           <div className="max-w-6xl mx-auto">
             {posts.length === 0 ? (
-              <p className="text-center text-slate-400 py-20">
+              <p className="text-center text-[#a1a1aa] py-20">
                 No posts yet — check back soon.
               </p>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {posts.map((post) => (
-                  <article key={post.slug} className="glass-card-hover p-8 flex flex-col">
+                  <article
+                    key={post.slug}
+                    className="bg-[#0d0d0d] border border-white/[0.08] rounded-2xl hover:border-white/[0.15] transition-[border-color] duration-200 p-8 flex flex-col"
+                  >
                     {/* Date */}
                     <time
                       dateTime={post.date}
-                      className="text-xs font-medium text-blue-400 mb-4 uppercase tracking-wider"
+                      className="text-xs font-medium text-[#52525b] mb-4 uppercase tracking-wider"
                     >
                       {formatDate(post.date)}
                     </time>
@@ -65,14 +59,14 @@ export default function BlogPage() {
                     </h2>
 
                     {/* Description */}
-                    <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    <p className="text-[#a1a1aa] text-sm leading-relaxed mb-6">
                       {post.description}
                     </p>
 
                     {/* Read More */}
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors group"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#3b82f6] hover:text-white transition-[color] duration-200 group"
                     >
                       Read More
                       <svg

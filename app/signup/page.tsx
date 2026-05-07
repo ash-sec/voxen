@@ -110,15 +110,11 @@ export default function SignupPage() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden"
-      style={{ background: "#0f172a" }}
+      style={{ background: "#000000" }}
     >
-      {/* BG orbs */}
-      <div className="orb w-96 h-96 top-0 -right-20 pointer-events-none" style={{ background: "rgba(59,130,246,0.08)" }} />
-      <div className="orb w-72 h-72 bottom-10 -left-20 pointer-events-none" style={{ background: "rgba(99,102,241,0.06)", animationDelay: "3s" }} />
-
       {/* Back to home */}
       <div className="absolute top-5 left-4 sm:top-6 sm:left-6">
-        <Link href="/" className="flex items-center gap-2 text-slate-400 hover:text-white text-sm transition-colors">
+        <Link href="/" className="flex items-center gap-2 text-[#a1a1aa] hover:text-white text-sm transition-[color] duration-200">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -130,7 +126,7 @@ export default function SignupPage() {
         {/* Logo */}
         <div className="text-center mb-6">
           <Link href="/">
-            <span className="text-2xl font-bold" style={{ color: "#ffffff", textShadow: "0 0 20px rgba(59,130,246,0.6)" }}>
+            <span className="text-2xl font-bold text-white">
               Voxen
             </span>
           </Link>
@@ -143,13 +139,13 @@ export default function SignupPage() {
         {step === "details" && (
           <div className="glass-card p-6 sm:p-8">
             <h1 className="text-xl sm:text-2xl font-bold text-white mb-1.5">Get started</h1>
-            <p className="text-slate-400 text-sm mb-6">
+            <p className="text-[#a1a1aa] text-sm mb-6">
               No card required yet — that comes after the questionnaire.
             </p>
 
             <form onSubmit={handleDetailsSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1.5">Full name</label>
+                <label className="block text-sm font-medium text-[#a1a1aa] mb-1.5">Full name</label>
                 <input
                   type="text"
                   value={name}
@@ -162,7 +158,7 @@ export default function SignupPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1.5">Email address</label>
+                <label className="block text-sm font-medium text-[#a1a1aa] mb-1.5">Email address</label>
                 <input
                   type="email"
                   value={email}
@@ -175,7 +171,7 @@ export default function SignupPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1.5">Profession</label>
+                <label className="block text-sm font-medium text-[#a1a1aa] mb-1.5">Profession</label>
                 <select
                   value={profession}
                   onChange={(e) => { setProfession(e.target.value); setOtherProfession(""); }}
@@ -229,9 +225,9 @@ export default function SignupPage() {
               </button>
             </form>
 
-            <p className="text-center text-xs text-slate-500 mt-5">
+            <p className="text-center text-xs text-[#52525b] mt-5">
               Already a member?{" "}
-              <Link href="/login" className="text-blue-400 hover:text-blue-300 transition-colors">
+              <Link href="/login" className="text-[#3b82f6] hover:text-white transition-[color] duration-200">
                 Sign in
               </Link>
             </p>
@@ -244,7 +240,7 @@ export default function SignupPage() {
             {/* Back */}
             <button
               onClick={() => { setStep("details"); setOtp(""); setOtpError(""); }}
-              className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm transition-colors mb-6"
+              className="flex items-center gap-1.5 text-[#a1a1aa] hover:text-white text-sm transition-[color] duration-200 mb-6"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -260,14 +256,14 @@ export default function SignupPage() {
             </div>
 
             <h1 className="text-xl sm:text-2xl font-bold text-white mb-2">Check your email</h1>
-            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+            <p className="text-[#a1a1aa] text-sm mb-6 leading-relaxed">
               We sent a 6-digit code to{" "}
               <span className="text-white font-medium break-all">{email}</span>
             </p>
 
             <form onSubmit={handleOTPSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1.5">
+                <label className="block text-sm font-medium text-[#a1a1aa] mb-1.5">
                   Verification code
                 </label>
                 <input
@@ -312,21 +308,21 @@ export default function SignupPage() {
             </form>
 
             <div className="text-center mt-5">
-              <span className="text-slate-500 text-sm">Didn&apos;t get it? </span>
+              <span className="text-[#52525b] text-sm">Didn&apos;t get it? </span>
               <button
                 onClick={handleResend}
                 disabled={resendLoading}
-                className="text-blue-400 hover:text-blue-300 text-sm transition-colors disabled:opacity-50"
+                className="text-[#3b82f6] hover:text-white text-sm transition-[color] duration-200 disabled:opacity-50"
               >
                 {resendLoading ? "Sending..." : "Resend code"}
               </button>
-              {resendMsg && <p className="text-slate-400 text-xs mt-2">{resendMsg}</p>}
+              {resendMsg && <p className="text-[#a1a1aa] text-xs mt-2">{resendMsg}</p>}
             </div>
           </div>
         )}
 
         {/* Trust signals */}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-600">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#52525b]">
           <div className="flex items-center gap-1.5">
             <svg className="w-3.5 h-3.5 text-blue-500/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />

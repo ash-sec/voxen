@@ -18,7 +18,7 @@ export default function SignupStepIndicator({ currentStep }: { currentStep: 1 | 
         {/* Connector line behind dots */}
         <div
           className="absolute top-4 left-0 right-0 h-px"
-          style={{ background: "rgba(59,130,246,0.15)" }}
+          style={{ background: "#333333" }}
         />
         {/* Progress fill */}
         <div
@@ -44,13 +44,13 @@ export default function SignupStepIndicator({ currentStep }: { currentStep: 1 | 
                     ? "rgba(34,197,94,0.15)"
                     : active
                     ? "#3B82F6"
-                    : "rgba(15,23,42,0.8)",
+                    : "#333333",
                   border: done
                     ? "1.5px solid rgba(34,197,94,0.5)"
                     : active
                     ? "none"
-                    : "1.5px solid rgba(59,130,246,0.2)",
-                  color: done ? "#4ade80" : active ? "#fff" : "#475569",
+                    : "1.5px solid #333333",
+                  color: done ? "#4ade80" : active ? "#fff" : "#a1a1aa",
                   boxShadow: active ? "0 0 16px rgba(59,130,246,0.4)" : "none",
                 }}
               >
@@ -66,11 +66,11 @@ export default function SignupStepIndicator({ currentStep }: { currentStep: 1 | 
               {/* Labels */}
               <span
                 className="text-xs font-semibold text-center leading-tight"
-                style={{ color: active ? "#ffffff" : done ? "#4ade80" : "#475569" }}
+                style={{ color: active ? "#ffffff" : done ? "#4ade80" : "#a1a1aa" }}
               >
                 {step.label}
               </span>
-              <span className="text-xs text-slate-600 text-center mt-0.5 hidden sm:block">
+              <span className="text-xs text-[#52525b] text-center mt-0.5 hidden sm:block">
                 {step.sublabel}
               </span>
             </div>
@@ -84,7 +84,7 @@ export default function SignupStepIndicator({ currentStep }: { currentStep: 1 | 
           <span className="text-xs font-semibold text-white">
             Step {currentStep} of {STEPS.length} — {STEPS[currentStep - 1].label}
           </span>
-          <span className="text-xs text-slate-500">
+          <span className="text-xs text-[#52525b]">
             {Math.round(((currentStep - 1) / (STEPS.length - 1)) * 100)}% complete
           </span>
         </div>

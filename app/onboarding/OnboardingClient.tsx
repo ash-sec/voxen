@@ -42,11 +42,7 @@ function CelebrationScreen({
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#0f172a" }}>
-      {/* Orbs */}
-      <div className="orb w-80 h-80 top-0 right-0" style={{ background: "rgba(59,130,246,0.1)" }} />
-      <div className="orb w-64 h-64 bottom-0 left-0" style={{ background: "rgba(99,102,241,0.08)", animationDelay: "2s" }} />
-
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "#000000" }}>
       <div className="relative z-10 w-full max-w-md text-center">
         {/* Celebration phase */}
         <div
@@ -65,7 +61,6 @@ function CelebrationScreen({
               background: "rgba(59,130,246,0.15)",
               border: "2px solid rgba(59,130,246,0.4)",
               boxShadow: "0 0 40px rgba(59,130,246,0.3)",
-              animation: "float-orb 3s ease-in-out infinite",
             }}
           >
             <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -76,7 +71,7 @@ function CelebrationScreen({
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             You&apos;re all set! 🎉
           </h1>
-          <p className="text-slate-400 text-base">
+          <p className="text-[#a1a1aa] text-base">
             Taking you to the final step...
           </p>
 
@@ -113,7 +108,7 @@ function CelebrationScreen({
                 </svg>
               ))}
             </div>
-            <p className="text-slate-300 text-sm leading-relaxed mb-3">
+            <p className="text-[#d4d4d4] text-sm leading-relaxed mb-3">
               &ldquo;Within three weeks I had two recruiters message me out of nowhere. Never would&apos;ve happened without Voxen keeping my profile active.&rdquo;
             </p>
             <div className="flex items-center gap-2.5">
@@ -122,7 +117,7 @@ function CelebrationScreen({
               </div>
               <div>
                 <p className="text-white text-xs font-semibold">Jake T.</p>
-                <p className="text-slate-500 text-xs">Electrician · Sydney, NSW</p>
+                <p className="text-[#52525b] text-xs">Electrician · Sydney, NSW</p>
               </div>
             </div>
           </div>
@@ -143,7 +138,7 @@ function CelebrationScreen({
                 </div>
               ))}
             </div>
-            <p className="text-slate-300 text-xs">
+            <p className="text-[#a1a1aa] text-xs">
               <span className="text-white font-semibold">200+</span> Aussie professionals already posting
             </p>
           </div>
@@ -159,7 +154,7 @@ function CelebrationScreen({
             </svg>
           </button>
 
-          <p className="text-slate-600 text-xs mt-3">$250 AUD/month · Cancel anytime · Powered by Stripe</p>
+          <p className="text-[#52525b] text-xs mt-3">$250 AUD/month · Cancel anytime · Powered by Stripe</p>
         </div>
       </div>
     </div>
@@ -300,16 +295,13 @@ export default function OnboardingClient() {
 
       <div
         className="min-h-screen flex flex-col items-center justify-center px-4 py-10 relative overflow-hidden"
-        style={{ background: "#0f172a" }}
+        style={{ background: "#000000" }}
       >
-        <div className="orb w-96 h-96 top-0 right-0 pointer-events-none" style={{ background: "rgba(59,130,246,0.07)" }} />
-        <div className="orb w-64 h-64 bottom-10 left-0 pointer-events-none" style={{ background: "rgba(99,102,241,0.05)", animationDelay: "3s" }} />
-
         <div className="w-full max-w-lg relative z-10">
           {/* Logo */}
           <div className="text-center mb-6">
             <Link href="/">
-              <span className="text-2xl font-bold" style={{ color: "#ffffff", textShadow: "0 0 20px rgba(59,130,246,0.6)" }}>
+              <span className="text-2xl font-bold text-white">
                 Voxen
               </span>
             </Link>
@@ -321,12 +313,12 @@ export default function OnboardingClient() {
           {/* Questionnaire progress bar */}
           <div className="mb-6">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-[#52525b]">
                 Question {step} of {TOTAL_STEPS}
               </span>
               <div className="flex items-center gap-3">
                 <SavedIndicator visible={savedVisible && isSignupMode} />
-                <span className="text-xs text-slate-500">{Math.round(qProgress)}%</span>
+                <span className="text-xs text-[#52525b]">{Math.round(qProgress)}%</span>
               </div>
             </div>
             <div className="progress-bar">
@@ -340,7 +332,7 @@ export default function OnboardingClient() {
               <div className="mb-4">
                 <div className="badge inline-flex mb-3">Let&apos;s get to know you</div>
                 <h1 className="text-xl sm:text-2xl font-bold text-white mb-2">Let&apos;s get to know you</h1>
-                <p className="text-slate-400 text-sm">This takes less than 5 minutes and helps us write posts that actually sound like you.</p>
+                <p className="text-[#a1a1aa] text-sm">This takes less than 5 minutes and helps us write posts that actually sound like you.</p>
               </div>
             )}
 
@@ -352,7 +344,7 @@ export default function OnboardingClient() {
                   <label className="block text-sm sm:text-base font-semibold text-white mb-1.5">
                     What&apos;s your job title and how long have you been doing it?
                   </label>
-                  <p className="text-slate-500 text-xs sm:text-sm mb-3">e.g. &quot;Registered Nurse, 6 years&quot; or &quot;Electrician, 12 years&quot;</p>
+                  <p className="text-[#52525b] text-xs sm:text-sm mb-3">e.g. &quot;Registered Nurse, 6 years&quot; or &quot;Electrician, 12 years&quot;</p>
                   <input
                     type="text"
                     value={answers.jobTitle ?? ""}
@@ -369,7 +361,7 @@ export default function OnboardingClient() {
                   <label className="block text-sm sm:text-base font-semibold text-white mb-1.5">
                     What do you want people to know you for on LinkedIn?
                   </label>
-                  <p className="text-slate-500 text-xs sm:text-sm mb-3">Your expertise, values, or the impression you want to leave.</p>
+                  <p className="text-[#52525b] text-xs sm:text-sm mb-3">Your expertise, values, or the impression you want to leave.</p>
                   <textarea
                     value={answers.wantKnownFor ?? ""}
                     onChange={(e) => updateAnswer("wantKnownFor", e.target.value)}
@@ -393,7 +385,7 @@ export default function OnboardingClient() {
                         className={`w-full text-left px-4 py-3.5 rounded-xl border transition-all duration-200 text-sm sm:text-base ${
                           answers.personality === opt.value
                             ? "border-blue-500 bg-blue-500/15 text-white"
-                            : "border-white/10 text-slate-300 hover:border-white/20 active:bg-white/5"
+                            : "border-white/10 text-[#a1a1aa] hover:border-white/20 active:bg-white/5"
                         }`}
                       >
                         {opt.label}
@@ -408,7 +400,7 @@ export default function OnboardingClient() {
                   <label className="block text-sm sm:text-base font-semibold text-white mb-1.5">
                     What topics do you care most about?
                   </label>
-                  <p className="text-slate-500 text-xs sm:text-sm mb-3">Select all that apply.</p>
+                  <p className="text-[#52525b] text-xs sm:text-sm mb-3">Select all that apply.</p>
                   <div className="flex flex-wrap gap-2">
                     {TOPIC_OPTIONS.map((topic) => (
                       <button
@@ -417,7 +409,7 @@ export default function OnboardingClient() {
                         className={`px-3 py-2 rounded-full text-sm border transition-all duration-200 ${
                           answers.topics?.includes(topic)
                             ? "border-blue-500 bg-blue-500/15 text-white"
-                            : "border-white/10 text-slate-400 hover:border-white/20 active:bg-white/5"
+                            : "border-white/10 text-[#a1a1aa] hover:border-white/20 active:bg-white/5"
                         }`}
                       >
                         {topic}
@@ -432,7 +424,7 @@ export default function OnboardingClient() {
                   <label className="block text-sm sm:text-base font-semibold text-white mb-1.5">
                     What frustrates you about your industry that you&apos;d talk about publicly?
                   </label>
-                  <p className="text-slate-500 text-xs sm:text-sm mb-3">Be honest — raw authenticity gets engagement.</p>
+                  <p className="text-[#52525b] text-xs sm:text-sm mb-3">Be honest — raw authenticity gets engagement.</p>
                   <textarea
                     value={answers.frustration ?? ""}
                     onChange={(e) => updateAnswer("frustration", e.target.value)}
@@ -448,7 +440,7 @@ export default function OnboardingClient() {
                   <label className="block text-sm sm:text-base font-semibold text-white mb-1.5">
                     Tell us about a recent win, challenge or moment at work.
                   </label>
-                  <p className="text-slate-500 text-xs sm:text-sm mb-3">Real stories make the best posts. Doesn&apos;t need to be huge.</p>
+                  <p className="text-[#52525b] text-xs sm:text-sm mb-3">Real stories make the best posts. Doesn&apos;t need to be huge.</p>
                   <textarea
                     value={answers.recentWin ?? ""}
                     onChange={(e) => updateAnswer("recentWin", e.target.value)}
@@ -472,7 +464,7 @@ export default function OnboardingClient() {
                         className={`w-full text-left px-4 py-3.5 rounded-xl border transition-all duration-200 text-sm sm:text-base ${
                           answers.audience === opt.value
                             ? "border-blue-500 bg-blue-500/15 text-white"
-                            : "border-white/10 text-slate-300 hover:border-white/20 active:bg-white/5"
+                            : "border-white/10 text-[#a1a1aa] hover:border-white/20 active:bg-white/5"
                         }`}
                       >
                         {opt.label}
@@ -486,9 +478,9 @@ export default function OnboardingClient() {
                 <div>
                   <label className="block text-sm sm:text-base font-semibold text-white mb-1.5">
                     Any slang or phrases you use at work?{" "}
-                    <span className="text-slate-500 font-normal">(optional)</span>
+                    <span className="text-[#52525b] font-normal">(optional)</span>
                   </label>
-                  <p className="text-slate-500 text-xs sm:text-sm mb-3">e.g. &quot;arvo&quot;, &quot;on the tools&quot;, &quot;double shift&quot;</p>
+                  <p className="text-[#52525b] text-xs sm:text-sm mb-3">e.g. &quot;arvo&quot;, &quot;on the tools&quot;, &quot;double shift&quot;</p>
                   <input
                     type="text"
                     value={answers.slang ?? ""}
@@ -520,7 +512,7 @@ export default function OnboardingClient() {
               <button
                 onClick={() => { setStep((s) => s - 1); setError(""); }}
                 disabled={step === 1}
-                className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-h-[44px] px-2"
+                className="flex items-center gap-2 text-sm text-[#a1a1aa] hover:text-white transition-[color] duration-200 disabled:opacity-30 disabled:cursor-not-allowed min-h-[44px] px-2"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
