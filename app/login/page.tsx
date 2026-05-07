@@ -32,16 +32,14 @@ export default function LoginPage() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden"
-      style={{ background: "#0f172a" }}
+      className="min-h-screen flex flex-col items-center justify-center px-4 py-12"
+      style={{ background: "#000000" }}
     >
-      <div className="orb w-96 h-96 top-0 right-0 pointer-events-none" style={{ background: "rgba(59,130,246,0.07)" }} />
-
-      <div className="w-full max-w-md relative z-10">
+      <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/">
-            <span className="text-2xl font-bold" style={{ color: "#ffffff", textShadow: "0 0 20px rgba(59,130,246,0.6)" }}>
+            <span className="text-2xl font-bold text-white">
               Voxen
             </span>
           </Link>
@@ -50,7 +48,7 @@ export default function LoginPage() {
         <div className="glass-card p-8">
           {!sent ? (
             <>
-              <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-[#111111] border border-white/[0.08] flex items-center justify-center mb-6">
                 <svg className="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                     d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
@@ -58,13 +56,13 @@ export default function LoginPage() {
               </div>
 
               <h1 className="text-2xl font-bold text-white mb-2">Sign in to Voxen</h1>
-              <p className="text-slate-400 text-sm mb-8">
+              <p className="text-[#a1a1aa] text-sm mb-8">
                 Enter your email and we&apos;ll send you a magic login link. No password needed.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-1.5">
+                  <label className="block text-sm font-medium text-[#a1a1aa] mb-1.5">
                     Email address
                   </label>
                   <input
@@ -102,9 +100,9 @@ export default function LoginPage() {
                 </button>
               </form>
 
-              <p className="text-center text-xs text-slate-500 mt-6">
+              <p className="text-center text-xs text-[#52525b] mt-6">
                 Not a member?{" "}
-                <Link href="/signup" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/signup" className="text-[#3b82f6] hover:text-white transition-[color] duration-200">
                   Get started
                 </Link>
               </p>
@@ -119,11 +117,11 @@ export default function LoginPage() {
               </div>
 
               <h1 className="text-2xl font-bold text-white mb-2">Check your email</h1>
-              <p className="text-slate-400 text-sm mb-4">
+              <p className="text-[#a1a1aa] text-sm mb-4">
                 If an account exists for <span className="text-white font-medium">{email}</span>,
                 we&apos;ve sent a magic login link. It expires in 15 minutes.
               </p>
-              <p className="text-slate-500 text-xs">
+              <p className="text-[#52525b] text-xs">
                 Check your spam folder if you don&apos;t see it in your inbox.
               </p>
             </>

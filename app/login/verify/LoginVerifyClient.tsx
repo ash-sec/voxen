@@ -43,11 +43,11 @@ export default function LoginVerifyClient() {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: "#0f172a" }}
+      style={{ background: "#000000" }}
     >
       <div className="w-full max-w-md text-center">
         <Link href="/">
-          <span className="text-2xl font-bold mb-8 inline-block" style={{ color: "#ffffff", textShadow: "0 0 20px rgba(59,130,246,0.6)" }}>
+          <span className="text-2xl font-bold mb-8 inline-block text-white">
             Voxen
           </span>
         </Link>
@@ -62,7 +62,7 @@ export default function LoginVerifyClient() {
                 </svg>
               </div>
               <h2 className="text-xl font-bold text-white mb-2">Signing you in...</h2>
-              <p className="text-slate-400 text-sm">Just a moment.</p>
+              <p className="text-[#a1a1aa] text-sm">Just a moment.</p>
             </>
           )}
 
@@ -74,7 +74,7 @@ export default function LoginVerifyClient() {
                 </svg>
               </div>
               <h2 className="text-xl font-bold text-white mb-2">You&apos;re in!</h2>
-              <p className="text-slate-400 text-sm">Redirecting you to your account...</p>
+              <p className="text-[#a1a1aa] text-sm">Redirecting you to your account...</p>
             </>
           )}
 
@@ -86,7 +86,7 @@ export default function LoginVerifyClient() {
                 </svg>
               </div>
               <h2 className="text-xl font-bold text-white mb-2">Link expired</h2>
-              <p className="text-slate-400 text-sm mb-6">{errorMsg}</p>
+              <p className="text-[#a1a1aa] text-sm mb-6">{errorMsg}</p>
               <Link href="/login" className="btn-primary inline-flex items-center gap-2 text-sm">
                 Request a new link
               </Link>

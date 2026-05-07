@@ -66,14 +66,14 @@ export default function DashboardShell({
   }
 
   return (
-    <div className="min-h-screen flex" style={{ background: "#0f172a" }}>
+    <div className="min-h-screen flex" style={{ background: "#000000" }}>
       {/* Sidebar — desktop */}
       <aside
         className="hidden md:flex w-64 flex-col fixed inset-y-0 left-0"
-        style={{ background: "#080d1a", borderRight: "1px solid #1e293b" }}
+        style={{ background: "#0d0d0d", borderRight: "1px solid rgba(255,255,255,0.08)" }}
       >
         {/* Logo */}
-        <div className="px-6 py-6" style={{ borderBottom: "1px solid #1e293b" }}>
+        <div className="px-6 py-6" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
           <Link href="/">
             <span className="text-xl font-bold text-white">Voxen</span>
           </Link>
@@ -91,13 +91,13 @@ export default function DashboardShell({
                 style={{
                   background: isActive ? "rgba(59,130,246,0.15)" : "transparent",
                   border: isActive ? "1px solid rgba(59,130,246,0.3)" : "1px solid transparent",
-                  color: isActive ? "#93c5fd" : "#94a3b8",
+                  color: isActive ? "#93c5fd" : "#a1a1aa",
                 }}
               >
-                <span style={{ color: isActive ? "#60a5fa" : "#475569" }}>{item.icon}</span>
+                <span style={{ color: isActive ? "#60a5fa" : "#52525b" }}>{item.icon}</span>
                 {item.label}
                 {item.soon && (
-                  <span className="ml-auto text-xs font-normal" style={{ color: "#475569" }}>Soon</span>
+                  <span className="ml-auto text-xs font-normal" style={{ color: "#52525b" }}>Soon</span>
                 )}
               </Link>
             );
@@ -105,7 +105,7 @@ export default function DashboardShell({
         </nav>
 
         {/* User info */}
-        <div className="px-4 py-4" style={{ borderTop: "1px solid #1e293b" }}>
+        <div className="px-4 py-4" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
           <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl">
             <div
               className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
@@ -117,19 +117,19 @@ export default function DashboardShell({
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-white text-sm font-medium truncate">{subscriber.name}</p>
-              <p className="text-slate-500 text-xs truncate">{subscriber.email}</p>
+              <p className="text-[#52525b] text-xs truncate">{subscriber.email}</p>
             </div>
           </div>
           <button
             onClick={handleLogout}
             className="w-full mt-2 px-3 py-2 text-xs rounded-xl transition-all text-left flex items-center gap-2"
-            style={{ color: "#475569" }}
+            style={{ color: "#52525b" }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.color = "#94a3b8";
+              (e.currentTarget as HTMLButtonElement).style.color = "#a1a1aa";
               (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.04)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.color = "#475569";
+              (e.currentTarget as HTMLButtonElement).style.color = "#52525b";
               (e.currentTarget as HTMLButtonElement).style.background = "transparent";
             }}
           >
@@ -145,7 +145,7 @@ export default function DashboardShell({
       {/* Mobile top bar */}
       <div
         className="md:hidden fixed top-0 left-0 right-0 z-50 px-4 h-14 flex items-center justify-between"
-        style={{ background: "#080d1a", borderBottom: "1px solid #1e293b" }}
+        style={{ background: "#0d0d0d", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
       >
         <Link href="/">
           <span className="text-xl font-bold text-white">Voxen</span>
@@ -168,12 +168,12 @@ export default function DashboardShell({
         >
           <div
             className="w-64 h-full flex flex-col"
-            style={{ background: "#080d1a", borderRight: "1px solid #1e293b" }}
+            style={{ background: "#0d0d0d", borderRight: "1px solid rgba(255,255,255,0.08)" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="px-6 py-5 mt-14" style={{ borderBottom: "1px solid #1e293b" }}>
+            <div className="px-6 py-5 mt-14" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <p className="text-white text-sm font-medium">{subscriber.name}</p>
-              <p className="text-slate-500 text-xs">{subscriber.email}</p>
+              <p className="text-[#52525b] text-xs">{subscriber.email}</p>
             </div>
             <nav className="flex-1 px-4 py-4 space-y-1">
               {NAV_ITEMS.map((item) => {
@@ -187,21 +187,21 @@ export default function DashboardShell({
                     style={{
                       background: isActive ? "rgba(59,130,246,0.15)" : "transparent",
                       border: isActive ? "1px solid rgba(59,130,246,0.3)" : "1px solid transparent",
-                      color: isActive ? "#93c5fd" : "#94a3b8",
+                      color: isActive ? "#93c5fd" : "#a1a1aa",
                     }}
                   >
-                    <span style={{ color: isActive ? "#60a5fa" : "#475569" }}>{item.icon}</span>
+                    <span style={{ color: isActive ? "#60a5fa" : "#52525b" }}>{item.icon}</span>
                     {item.label}
-                    {item.soon && <span className="ml-auto text-xs" style={{ color: "#475569" }}>Soon</span>}
+                    {item.soon && <span className="ml-auto text-xs" style={{ color: "#52525b" }}>Soon</span>}
                   </Link>
                 );
               })}
             </nav>
-            <div className="px-4 pb-6 pt-4" style={{ borderTop: "1px solid #1e293b" }}>
+            <div className="px-4 pb-6 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
               <button
                 onClick={handleLogout}
                 className="w-full px-3 py-2.5 text-sm rounded-xl transition-all text-left flex items-center gap-2"
-                style={{ color: "#94a3b8" }}
+                style={{ color: "#a1a1aa" }}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
