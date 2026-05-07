@@ -18,11 +18,11 @@ const AUDIENCE_LABELS: Record<string, string> = {
 function row(label: string, value: string): string {
   return `
     <tr>
-      <td style="padding: 10px 0; border-bottom: 1px solid rgba(59,130,246,0.08); vertical-align: top; width: 38%;">
-        <span style="font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">${label}</span>
+      <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top; width: 38%;">
+        <span style="font-size: 12px; color: #52525b; text-transform: uppercase; letter-spacing: 0.05em;">${label}</span>
       </td>
-      <td style="padding: 10px 0 10px 16px; border-bottom: 1px solid rgba(59,130,246,0.08); vertical-align: top;">
-        <span style="font-size: 14px; color: #e2e8f0;">${value}</span>
+      <td style="padding: 10px 0 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: top;">
+        <span style="font-size: 14px; color: #d4d4d4;">${value}</span>
       </td>
     </tr>
   `;
@@ -45,7 +45,7 @@ export function OnboardingSummaryEmailTemplate({
     <h1>Your Voxen profile is ready ✅</h1>
     <p>Nice one, ${firstName}! We've saved everything and your profile is set up. Here's a summary of what we've got:</p>
 
-    <div style="background: #0a1525; border: 1px solid rgba(59,130,246,0.2); border-radius: 12px; padding: 20px; margin: 24px 0;">
+    <div style="background: #111111; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; margin: 24px 0;">
       <table style="width: 100%; border-collapse: collapse;">
         ${row("Name", name)}
         ${row("Profession", profession)}
@@ -65,8 +65,8 @@ export function OnboardingSummaryEmailTemplate({
 
     <hr class="divider" />
 
-    <p style="font-size: 14px; color: #64748b;">If you have any questions before subscribing, just reply to this email. We actually read them.</p>
+    <p style="font-size: 14px; color: #52525b;">If you have any questions before subscribing, just reply to this email. We actually read them.</p>
 
-    <p style="font-size: 15px; color: #e2e8f0; margin-top: 24px;">Cheers,<br><strong>The Voxen Team</strong></p>
+    <p style="font-size: 15px; color: #d4d4d4; margin-top: 24px;">Cheers,<br><strong>The Voxen Team</strong></p>
   `);
 }

@@ -13,10 +13,10 @@ export function CancellationEmailTemplate({ name }: { name: string }): string {
 
     <hr class="divider" />
 
-    <p style="font-size: 14px; color: #64748b;">Changed your mind? You can reactivate your subscription anytime from your account page:</p>
+    <p style="font-size: 14px; color: #52525b;">Changed your mind? You can reactivate your subscription anytime from your account page:</p>
 
     <a href="${BASE_URL}/account" class="btn" style="display:inline-block; margin: 8px 0;">Reactivate My Account</a>
 
-    <p style="font-size: 15px; color: #e2e8f0; margin-top: 24px;">All the best,<br><strong>The Voxen Team</strong></p>
+    <p style="font-size: 15px; color: #d4d4d4; margin-top: 24px;">All the best,<br><strong>The Voxen Team</strong></p>
   `);
 }

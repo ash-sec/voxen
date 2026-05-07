@@ -17,9 +17,9 @@ export function MagicLinkEmailTemplate({
 
     <hr class="divider" />
 
-    <p style="font-size: 13px; color: #64748b;">If you didn't request this, you can safely ignore this email. Your account is secure.</p>
+    <p style="font-size: 13px; color: #52525b;">If you didn't request this, you can safely ignore this email. Your account is secure.</p>
 
-    <p style="font-size: 13px; color: #64748b; margin-top: 8px;">
+    <p style="font-size: 13px; color: #52525b; margin-top: 8px;">
       Or copy and paste this URL into your browser:<br>
       <span style="color: #3B82F6; word-break: break-all;">${loginUrl}</span>
     </p>

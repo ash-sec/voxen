@@ -21,9 +21,9 @@ export function AbandonedSignupEmailTemplate({
 
     <hr class="divider" />
 
-    <p style="font-size: 14px; color: #64748b;">Not interested? No worries — you won't hear from us again after this.</p>
-    <p style="font-size: 14px; color: #64748b;">Got questions? Reply to this email and we'll sort it out.</p>
+    <p style="font-size: 14px; color: #52525b;">Not interested? No worries — you won't hear from us again after this.</p>
+    <p style="font-size: 14px; color: #52525b;">Got questions? Reply to this email and we'll sort it out.</p>
 
-    <p style="font-size: 15px; color: #e2e8f0; margin-top: 24px;">Cheers,<br><strong>The Voxen Team</strong></p>
+    <p style="font-size: 15px; color: #d4d4d4; margin-top: 24px;">Cheers,<br><strong>The Voxen Team</strong></p>
   `);
 }

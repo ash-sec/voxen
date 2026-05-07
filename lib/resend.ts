@@ -29,7 +29,7 @@ export function randomSubjectLine(day: string): string {
 export const OPENERS = [
   "Hope your week's going well! Here's your post for today:",
   "Morning! Your post's ready to go 👇",
-  "Here's this week's content drop — have a good one:",
+  "Here's this week's content drop:",
   "Your post just landed. Copy, paste, done:",
   "Another week, another great post. Here you go:",
   "Keeping your LinkedIn ticking along 🙌 Here's today's post:",
