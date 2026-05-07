@@ -36,7 +36,7 @@ export default function SupportPage() {
     <div>
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-white">Help & Support</h1>
-        <p className="text-slate-400 mt-1">
+        <p className="text-[#a1a1aa] mt-1">
           Got a question? We&apos;re here to help.
         </p>
       </div>
@@ -44,11 +44,11 @@ export default function SupportPage() {
       {/* Quick contact */}
       <div className="glass-card p-6 mb-8">
         <h3 className="text-white font-semibold mb-2">Contact Support</h3>
-        <p className="text-slate-400 text-sm mb-4">
+        <p className="text-[#a1a1aa] text-sm mb-4">
           Email us directly at{" "}
           <a
             href="mailto:voxensupport.au@gmail.com"
-            className="text-blue-400 hover:text-blue-300 transition-colors"
+            className="text-[#3b82f6] hover:text-white transition-[color] duration-200"
           >
             voxensupport.au@gmail.com
           </a>{" "}
@@ -68,13 +68,13 @@ export default function SupportPage() {
               </svg>
             </div>
             <h4 className="text-white font-semibold mb-2">Message sent!</h4>
-            <p className="text-slate-400 text-sm">We&apos;ll get back to you within 24 hours.</p>
+            <p className="text-[#a1a1aa] text-sm">We&apos;ll get back to you within 24 hours.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1.5">Name</label>
+                <label className="block text-sm font-medium text-[#a1a1aa] mb-1.5">Name</label>
                 <input
                   type="text"
                   value={name}
@@ -84,7 +84,7 @@ export default function SupportPage() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1.5">Email</label>
+                <label className="block text-sm font-medium text-[#a1a1aa] mb-1.5">Email</label>
                 <input
                   type="email"
                   value={email}
@@ -95,7 +95,7 @@ export default function SupportPage() {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1.5">Message</label>
+              <label className="block text-sm font-medium text-[#a1a1aa] mb-1.5">Message</label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}

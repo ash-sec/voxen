@@ -3,7 +3,7 @@ export default function PostsPage() {
     <div>
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-white">My Posts</h1>
-        <p className="text-slate-400 mt-1">Your delivered LinkedIn posts.</p>
+        <p className="text-[#a1a1aa] mt-1">Your delivered LinkedIn posts.</p>
       </div>
 
       <div className="glass-card p-12 text-center">
@@ -14,7 +14,7 @@ export default function PostsPage() {
           </svg>
         </div>
         <h3 className="text-xl font-bold text-white mb-3">Post history coming soon</h3>
-        <p className="text-slate-400 text-sm max-w-md mx-auto">
+        <p className="text-[#a1a1aa] text-sm max-w-md mx-auto">
           Soon you&apos;ll be able to view all your delivered posts here, request edits, and browse your content history.
         </p>
         <div className="mt-6 badge inline-flex">Coming soon</div>

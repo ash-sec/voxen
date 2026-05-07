@@ -65,11 +65,11 @@ export default function BillingPage() {
     <div>
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-white">Billing & Subscription</h1>
-        <p className="text-slate-400 mt-1">Manage your Voxen subscription.</p>
+        <p className="text-[#a1a1aa] mt-1">Manage your Voxen subscription.</p>
       </div>
 
       {cancelled && (
-        <div className="glass-card p-5 border-green-500/30 mb-6" style={{ borderColor: "rgba(34,197,94,0.3)" }}>
+        <div className="glass-card p-5 mb-6" style={{ borderColor: "rgba(34,197,94,0.3)" }}>
           <p className="text-green-400 text-sm font-medium">
             ✓ Your subscription has been cancelled. You&apos;ll continue to receive posts until the end of your current billing period.
           </p>
@@ -83,11 +83,11 @@ export default function BillingPage() {
         <div className="flex items-start justify-between mb-6">
           <div>
             <p className="text-2xl font-bold text-white">Voxen</p>
-            <p className="text-slate-400 text-sm mt-1">3 posts per week · Mon / Wed / Fri</p>
+            <p className="text-[#a1a1aa] text-sm mt-1">3 posts per week · Mon / Wed / Fri</p>
           </div>
           <div className="text-right">
             <p className="text-2xl font-bold text-white">$250</p>
-            <p className="text-slate-500 text-xs">AUD/month</p>
+            <p className="text-[#52525b] text-xs">AUD/month</p>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ export default function BillingPage() {
             { label: "Profession", value: info?.profession ?? "—", highlight: false },
           ].map((row, i) => (
             <div key={i} className="flex items-center justify-between">
-              <span className="text-slate-400 text-sm">{row.label}</span>
+              <span className="text-[#a1a1aa] text-sm">{row.label}</span>
               <span className={`text-sm font-medium ${
                 row.highlight && info?.status === "active" ? "text-green-400" :
                 row.highlight && info?.status === "cancelled" ? "text-red-400" : "text-white"
@@ -122,7 +122,7 @@ export default function BillingPage() {
             "Email delivery between 7am–10am AEST",
             "Cancel anytime",
           ].map((item, i) => (
-            <li key={i} className="flex items-center gap-3 text-sm text-slate-300">
+            <li key={i} className="flex items-center gap-3 text-sm text-[#a1a1aa]">
               <div className="w-5 h-5 rounded-full bg-blue-500/15 flex items-center justify-center flex-shrink-0">
                 <svg className="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -138,12 +138,12 @@ export default function BillingPage() {
       {info?.status !== "cancelled" && !cancelled && (
         <div className="glass-card p-6">
           <h3 className="text-white font-semibold mb-2">Cancel Subscription</h3>
-          <p className="text-slate-400 text-sm mb-4">
+          <p className="text-[#a1a1aa] text-sm mb-4">
             You can cancel at any time. You&apos;ll continue to receive posts until the end of your current billing period.
           </p>
           <button
             onClick={() => setShowCancelModal(true)}
-            className="px-5 py-2.5 rounded-xl border border-red-500/30 text-red-400 text-sm font-medium hover:bg-red-500/10 transition-all"
+            className="px-5 py-2.5 rounded-xl border border-red-500/30 text-red-400 text-sm font-medium hover:bg-red-500/10 transition-[border-color,background-color] duration-200"
           >
             Cancel Subscription
           </button>
@@ -155,7 +155,7 @@ export default function BillingPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
           <div className="glass-card p-8 max-w-md w-full">
             <h3 className="text-xl font-bold text-white mb-3">Cancel your subscription?</h3>
-            <p className="text-slate-400 text-sm mb-6">
+            <p className="text-[#a1a1aa] text-sm mb-6">
               Are you sure? You&apos;ll still receive posts until the end of your current billing period, but no further charges will be made.
             </p>
 
@@ -169,7 +169,7 @@ export default function BillingPage() {
               <button
                 onClick={handleCancel}
                 disabled={cancelLoading}
-                className="flex-1 px-4 py-3 bg-red-500/15 border border-red-500/30 text-red-400 rounded-xl text-sm font-medium hover:bg-red-500/25 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                className="flex-1 px-4 py-3 bg-red-500/15 border border-red-500/30 text-red-400 rounded-xl text-sm font-medium hover:bg-red-500/25 transition-[background-color] duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {cancelLoading ? "Cancelling..." : "Yes, cancel my subscription"}
               </button>

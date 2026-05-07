@@ -25,7 +25,7 @@ export default async function AccountPage() {
         <h1 className="text-3xl font-bold text-white">
           Hey {firstName} 👋
         </h1>
-        <p className="text-slate-400 mt-1">Here&apos;s what&apos;s happening with your account.</p>
+        <p className="text-[#a1a1aa] mt-1">Here&apos;s what&apos;s happening with your account.</p>
       </div>
 
       {/* Status + delivery cards */}
@@ -43,9 +43,9 @@ export default async function AccountPage() {
             </span>
           </div>
           <p className="text-2xl font-bold text-white">Voxen</p>
-          <p className="text-slate-400 text-sm mt-1">$250 AUD / month</p>
-          <p className="text-slate-500 text-xs mt-3">
-            Next billing: <span className="text-slate-300">{nextBillingFormatted}</span>
+          <p className="text-[#a1a1aa] text-sm mt-1">$250 AUD / month</p>
+          <p className="text-[#52525b] text-xs mt-3">
+            Next billing: <span className="text-[#a1a1aa]">{nextBillingFormatted}</span>
           </p>
         </div>
 
@@ -56,8 +56,8 @@ export default async function AccountPage() {
             <h3 className="text-white font-semibold">Next Post</h3>
           </div>
           <p className="text-2xl font-bold text-white">{nextDelivery}</p>
-          <p className="text-slate-400 text-sm mt-1">Between 7am – 10am AEST</p>
-          <p className="text-slate-500 text-xs mt-3">
+          <p className="text-[#a1a1aa] text-sm mt-1">Between 7am – 10am AEST</p>
+          <p className="text-[#52525b] text-xs mt-3">
             3 posts per week · Mon · Wed · Fri
           </p>
         </div>
@@ -69,7 +69,7 @@ export default async function AccountPage() {
           <h3 className="text-white font-semibold">My Profile</h3>
           <Link
             href="/onboarding"
-            className="text-sm text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1"
+            className="text-sm text-[#3b82f6] hover:text-white transition-[color] duration-200 flex items-center gap-1"
           >
             Update profile
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -98,7 +98,7 @@ export default async function AccountPage() {
             },
           ].map((row, i) => (
             <div key={i}>
-              <p className="text-xs text-slate-500 mb-0.5">{row.label}</p>
+              <p className="text-xs text-[#52525b] mb-0.5">{row.label}</p>
               <p className="text-sm text-white font-medium">{row.value}</p>
             </div>
           ))}
@@ -108,7 +108,7 @@ export default async function AccountPage() {
       {/* Onboarding CTA if not done */}
       {!subscriber.onboardingCompleted && (
         <div
-          className="glass-card p-6 border-blue-500/30"
+          className="glass-card p-6"
           style={{ borderColor: "rgba(59,130,246,0.3)" }}
         >
           <div className="flex items-start gap-4">
@@ -120,7 +120,7 @@ export default async function AccountPage() {
             </div>
             <div className="flex-1">
               <h4 className="text-white font-semibold mb-1">Complete your onboarding</h4>
-              <p className="text-slate-400 text-sm mb-4">
+              <p className="text-[#a1a1aa] text-sm mb-4">
                 To start receiving your posts, we need to know a bit about you. It takes less than 5 minutes.
               </p>
               <Link href="/onboarding" className="btn-primary text-sm inline-flex items-center gap-2 px-6 py-2.5">
