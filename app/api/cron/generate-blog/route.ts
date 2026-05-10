@@ -116,10 +116,27 @@ export async function GET(req: NextRequest) {
     const slugMatch = mdxContent.match(/^slug:\s*["'](.+?)["']/m);
     const slug = slugMatch?.[1] ?? `blog-post-${Date.now()}`;
 
-    // Step 7: Create file via GitHub API
+    // Step 7: Check if slug already exists in GitHub to avoid 422 conflict
+    let finalSlug = slug;
+    const checkRes = await fetch(
+      `https://api.github.com/repos/${process.env.GITHUB_REPO}/contents/content/blog/${slug}.mdx`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+      }
+    );
+    if (checkRes.status === 200) {
+      // File already exists — append timestamp to make the slug unique
+      finalSlug = `${slug}-${Date.now()}`;
+    }
+    // 404 means file does not exist, proceed with original slug
+
+    // Step 8: Create file via GitHub API
     const base64Content = Buffer.from(mdxContent).toString("base64");
     const githubRes = await fetch(
-      `https://api.github.com/repos/${process.env.GITHUB_REPO}/contents/content/blog/${slug}.mdx`,
+      `https://api.github.com/repos/${process.env.GITHUB_REPO}/contents/content/blog/${finalSlug}.mdx`,
       {
         method: "PUT",
         headers: {
@@ -128,7 +145,7 @@ export async function GET(req: NextRequest) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: `add blog post: ${slug}`,
+          message: `add blog post: ${finalSlug}`,
           content: base64Content,
           branch: "main",
         }),
@@ -140,16 +157,16 @@ export async function GET(req: NextRequest) {
       throw new Error(`GitHub API error: ${githubRes.status} ${errBody}`);
     }
 
-    // Step 8: Increment keyword index (cycle back to 0 at end)
+    // Step 9: Increment keyword index (cycle back to 0 at end)
     const nextIndex =
       currentIndex + 1 >= BLOG_KEYWORDS.length ? 0 : currentIndex + 1;
     await redis.set("blog:keyword-index", nextIndex);
 
-    // Step 9: Return success
+    // Step 10: Return success
     return Response.json({
       success: true,
       keyword,
-      slug,
+      slug: finalSlug,
       message: "Blog post published successfully",
     });
   } catch (err) {
