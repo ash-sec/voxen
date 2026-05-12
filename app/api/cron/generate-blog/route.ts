@@ -26,13 +26,17 @@ HUMAN WRITING RULES (CRITICAL):
 - Use conversational transitional phrases not mechanical ones like furthermore or in conclusion
 
 SEO REQUIREMENTS:
-- Target keyword must appear in the title, first paragraph, at least 2 subheadings and naturally throughout
-- Include related keywords and synonyms naturally
+- Target keyword must appear in the title, first paragraph, first H2 subheading, at least 2 more subheadings, and naturally 6 to 10 times throughout the body
+- The following primary keywords must be worked into every single blog post naturally, at least 2 to 3 of them per post minimum: "LinkedIn ghostwriting Australia", "LinkedIn ghostwriter Australia", "LinkedIn content Australia", "LinkedIn growth Australia", "LinkedIn personal branding Australia", "done for you LinkedIn content", "LinkedIn content creation Australia", "LinkedIn ghostwriting service Australia"
+- The following secondary keywords must appear where relevant and natural: "LinkedIn for business owners Australia", "LinkedIn for real estate agents Australia", "LinkedIn for mortgage brokers Australia", "LinkedIn for financial advisers Australia", "LinkedIn for tradies Australia", "LinkedIn personal brand", "LinkedIn content strategy Australia", "outsource LinkedIn content Australia", "LinkedIn branding Australia", "LinkedIn post writer Australia", "hire a LinkedIn ghostwriter", "LinkedIn content agency Australia", "consistent LinkedIn content", "LinkedIn presence Australia"
+- Include related keywords and synonyms naturally throughout
 - Answer the exact question the keyword is asking
-- Structure content so it can appear in Google featured snippets
-- Word count 600 to 1200 words
-- Use proper H2 and H3 subheadings throughout
-- Write for Australian audience, use Australian spelling
+- Structure content so it can appear in Google featured snippets by including a direct 2 to 3 sentence answer to the main question within the first 150 words
+- Word count 800 to 1200 words
+- Use proper H2 and H3 subheadings throughout, every subheading must contain at least one target keyword
+- Write for Australian audience, use Australian spelling throughout
+- Include at least one statistic or specific data point per post to build authority
+- End every post with a paragraph containing the words "LinkedIn ghostwriting Australia" and "voxen.co" naturally
 
 STRUCTURE:
 - Start with a hook that does NOT begin with I and does NOT follow a typical intro structure
@@ -94,7 +98,7 @@ export async function GET(req: NextRequest) {
         messages: [
           {
             role: "user",
-            content: `Write a blog post targeting this keyword: ${keyword}\n\nToday's date is ${new Date().toISOString().split('T')[0]}. Use this exact date in the frontmatter date field. Do not use any other date.`,
+            content: `Write a blog post targeting this keyword: ${keyword}\n\nToday's date is ${new Date().toISOString().split('T')[0]}. Use this exact date in the frontmatter date field. Do not use any other date.\n\nThis post must naturally include at least 3 of these high priority keywords throughout the content: LinkedIn ghostwriting Australia, LinkedIn ghostwriter Australia, LinkedIn content Australia, LinkedIn growth Australia, LinkedIn personal branding Australia, done for you LinkedIn content, LinkedIn content creation Australia, LinkedIn ghostwriting service Australia. Do not stuff them awkwardly, weave them in naturally so the post reads well.`,
           },
         ],
       }),

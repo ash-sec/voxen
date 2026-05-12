@@ -20,8 +20,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.frontmatter.title} — Voxen Blog`,
+    title: `${post.frontmatter.title} | Voxen - LinkedIn Ghostwriting Australia`,
     description: post.frontmatter.description,
+    alternates: {
+      canonical: `https://voxen.co/blog/${slug}`,
+    },
   };
 }
 

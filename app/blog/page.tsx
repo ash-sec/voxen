@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import { getAllPosts, formatDate } from "@/lib/blog";
 
 export const metadata = {
-  title: "Blog — Voxen",
+  title: "LinkedIn Tips and Ghostwriting Insights for Australian Professionals | Voxen Blog",
   description:
-    "Insights and tips for Australian professionals building their LinkedIn presence.",
+    "Practical LinkedIn content strategy, ghostwriting tips and personal branding advice for Australian business owners, real estate agents, mortgage brokers and professionals. Updated daily.",
 };
 
 export default function BlogPage() {
