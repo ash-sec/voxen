@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   icons: { icon: "/logo.png" },
   verification: {
     google: "gh66AX4HzzVgUZSjKQyWfWUylMtMkJEFhl_YflrDlgY",
+    other: {
+      "msvalidate.01": ["2B40EA4DC2F3EDE33437EA76E3334C92"],
+    },
   },
   title: "Voxen | LinkedIn Ghostwriting Service | Done-for-You LinkedIn Content",
   description:
