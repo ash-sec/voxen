@@ -85,13 +85,12 @@ export default function WhatIsVoxen() {
         {/* Body */}
         <div className="space-y-4 text-slate-400 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-14">
           <p>
-            Voxen is an Australian LinkedIn ghostwriting service. You sign up, fill in a short
+            Voxen is a done-for-you LinkedIn ghostwriting service. You sign up, fill in a short
             questionnaire about your work, personality and goals, and we handle everything from there.
           </p>
           <p>
             Every Monday, Wednesday and Friday, a ready-to-post LinkedIn post lands in your inbox
-            between 7am and 10am AEST. All you do is copy and paste it into LinkedIn. No writing,
-            no stressing, no staring at a blank screen.
+            ready to copy and paste. No writing, no stressing, no staring at a blank screen.
           </p>
           <p>
             The posts are written to sound like you. Your industry, your tone, your stories. Clients

@@ -36,7 +36,7 @@ const FAQS = [
     a: "Yes. Ghostwriting has existed for centuries and is completely standard practice across business, politics, media and personal branding. CEOs use speechwriters. Authors use co-writers. Business owners use copywriters. Having someone write in your voice based on your real experiences, views and expertise is no different. The ideas are yours. The stories are yours. We just handle the writing.",
   },
   {
-    q: "How much does LinkedIn ghostwriting cost in Australia?",
+    q: "How much does LinkedIn ghostwriting cost?",
     a: "Voxen is $250 per month for 3 posts per week. That works out to around $20 per post. Freelance LinkedIn ghostwriters in Australia typically charge $150 to $500 per post, so a subscription like Voxen is significantly more cost-effective for anyone who wants consistent content without a big freelancer bill.",
   },
   {

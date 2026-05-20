@@ -7,7 +7,7 @@ const FEATURES = [
   "3 tailored LinkedIn posts per week",
   "Posts written in your voice",
   "Delivered Monday, Wednesday & Friday",
-  "Australian-made for Australian professionals",
+  "Written for professionals worldwide",
   "Posts arrive in your inbox, just copy and paste",
   "Cancel anytime, no lock-in contracts",
 ];

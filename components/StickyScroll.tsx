@@ -62,7 +62,7 @@ const STEPS = [
     num: "03",
     title: "Posts land in your inbox Mon, Wed & Fri",
     desc: "Just open the email, copy the post, and paste it straight into LinkedIn. Takes about 30 seconds. Your LinkedIn stays active without any effort.",
-    badge: "7am to 10am AEST",
+    badge: "Every Mon, Wed & Fri",
   },
 ];
 
@@ -81,7 +81,7 @@ function Panel1() {
       <div className="grid grid-cols-3 gap-6 mb-6">
         {[
           { stat: "3x", label: "Posts per week", desc: "Every Mon, Wed & Fri" },
-          { stat: "7am", label: "Morning delivery", desc: "In your inbox by 10am AEST" },
+          { stat: "7am", label: "Morning delivery", desc: "Delivered every Mon, Wed & Fri morning" },
           { stat: "0", label: "Effort required", desc: "Just copy and paste" },
         ].map((tile) => (
           <div key={tile.stat}>
@@ -93,7 +93,7 @@ function Panel1() {
       </div>
       <div className="border-t border-white/5 pt-6 mt-6">
         <p className="text-[#a1a1aa] text-sm leading-[1.7]">
-          Voxen is an Australian LinkedIn ghostwriting service. You sign up, fill in a short questionnaire about your work, personality and goals, and we handle everything from there. Every Monday, Wednesday and Friday, a ready-to-post LinkedIn post lands in your inbox between 7am and 10am AEST.
+          Voxen is a done-for-you LinkedIn ghostwriting service. You sign up, fill in a short questionnaire about your work, personality and goals, and we handle everything from there. Every Monday, Wednesday and Friday, a ready-to-post LinkedIn post lands in your inbox ready to copy and paste.
         </p>
       </div>
     </div>
