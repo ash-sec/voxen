@@ -34,6 +34,18 @@ export default function Footer() {
             >
               Contact
             </a>
+            <a
+              href="https://www.producthunt.com/products/voxen?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-voxen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt="Voxen - Your LinkedIn posts, written and delivered weekly | Product Hunt"
+                width="250"
+                height="54"
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1154058&theme=dark&t=1779542116711"
+              />
+            </a>
           </div>
         </div>
 
