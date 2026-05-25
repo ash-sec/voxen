@@ -1,6 +1,14 @@
 import Stripe from "stripe";
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+if (!stripeSecretKey || stripeSecretKey.trim() === "") {
+  throw new Error(
+    "Missing environment variable: STRIPE_SECRET_KEY is not set or is empty. " +
+    "Add it to your Vercel project environment variables and redeploy."
+  );
+}
+
+export const stripe = new Stripe(stripeSecretKey, {
   apiVersion: "2026-03-25.dahlia",
   typescript: true,
 });

@@ -8,6 +8,14 @@ import type { OnboardingAnswers } from "@/lib/types";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://voxen.co";
 
 export async function POST(req: NextRequest) {
+  if (!process.env.STRIPE_SECRET_KEY || process.env.STRIPE_SECRET_KEY.trim() === "") {
+    console.error("onboarding-pending: STRIPE_SECRET_KEY is not set");
+    return Response.json(
+      { error: "Server configuration error: payment system unavailable." },
+      { status: 500 }
+    );
+  }
+
   try {
     const { signupToken, answers }: { signupToken: string; answers: OnboardingAnswers } =
       await req.json();
