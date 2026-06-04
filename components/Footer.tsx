@@ -35,15 +35,15 @@ export default function Footer() {
               Contact
             </a>
             <a
-              href="https://www.producthunt.com/products/voxen?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-voxen"
+              href="https://www.producthunt.com/products/voxen?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-voxen-2"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                alt="Voxen - Your LinkedIn posts, written and delivered weekly | Product Hunt"
+                alt="Voxen - Your LinkedIn posts, written and delivered every week | Product Hunt"
                 width="250"
                 height="54"
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1154058&theme=dark&t=1779542116711"
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1163196&theme=dark&t=1780564779449"
               />
             </a>
           </div>
@@ -52,7 +52,7 @@ export default function Footer() {
         {/* Bottom line */}
         <div className="mt-8 pt-8 border-t border-white/5 text-center">
           <p className="text-[#3f3f46] text-xs">
-            &copy; 2026 Voxen. All rights reserved. Australian-made for Australian professionals.
+            &copy; 2026 Voxen. All rights reserved. Built for professionals worldwide.
           </p>
         </div>
       </div>
